@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Bộ Não AI Đọc CV</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f7f6; display: flex; flex-direction: column; align-items: center; min-height: 100vh; color: #333; padding: 1rem 0; } /* Changed display for better centering */
+        .container { background: #fff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.07); width: 90%; max-width: 800px; padding: 2rem; margin-bottom: 2rem; /* Add margin bottom */ }
+        h1 { text-align: center; color: #1a1a1a; margin-bottom: 0.5rem; }
+        .subtitle { text-align: center; color: #555; margin-top: 0; margin-bottom: 1.5rem; }
+
+        /* Khu vực thả file */
+        #drop-zone { border: 2px dashed #007aff; border-radius: 8px; padding: 40px; text-align: center; cursor: pointer; transition: background 0.2s ease; margin-bottom: 1.5rem; }
+        #drop-zone.dragover { background: #e6f2ff; }
+        #drop-zone p { margin: 0; font-size: 1.1rem; color: #555; }
+        #drop-zone span { font-size: 0.9rem; color: #888; }
+
+        /* Loading indicator */
+        #loading { display: none; text-align: center; margin: 2rem 0; }
+        #loading .spinner {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #007aff; /* Blue */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px auto;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #loading p { font-weight: bold; color: #007aff; margin: 5px 0; }
+        #loading .status { font-size: 0.9em; color: #666; font-weight: normal; }
+
+        /* Kết quả */
+        #results { display: none; margin-top: 1rem; border-top: 1px solid #eee; padding-top: 1.5rem; }
+        #results h3 { color: #2c3e50; margin-bottom: 1rem; border-bottom: 2px solid #007aff; padding-bottom: 0.5rem; }
+        #results .section { margin-bottom: 1.5rem; }
+        #results .section-title { font-weight: bold; color: #34495e; margin-bottom: 0.5rem; display: block; }
+        #results pre {
+            background: #f8f9fa; color: #333;
+            padding: 1rem; border-radius: 5px; white-space: pre-wrap;
+            word-wrap: break-word; font-family: 'Consolas', 'Monaco', monospace;
+            border: 1px solid #e0e0e0; font-size: 0.9em;
+            max-height: 300px; /* Add max height */
+            overflow-y: auto; /* Add scroll */
+        }
+         #results .vector-preview { font-size: 0.8em; color: #555; }
+
+        /* Error message */
+        .error-message { color: #e74c3c; font-weight: bold; background: #fceded; border: 1px solid #e74c3c; padding: 1rem; border-radius: 5px; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Bộ Não AI Đọc CV (V8)</h1>
+        <p class="subtitle">Thả file PDF vào ô bên dưới để AI phân tích</p>
+
+        <!-- Status indicator -->
+        <div id="connection-status" style="text-align: center; padding: 10px; margin-bottom: 1rem; border-radius: 5px; font-size: 0.9em;">
+            ⏳ Đang kiểm tra kết nối...
+        </div>
+
+        <div id="drop-zone">
+            <p>Thả file CV (dạng .pdf) vào đây</p>
+            <span>hoặc <b>nhấn để chọn file</b></span>
+        </div>
+        <input type="file" id="file-input" accept=".pdf" style="display: none;">
+
+        <div id="loading">
+            <div class="spinner"></div>
+            <p id="loading-message">Đang xử lý...</p>
+            <p class="status" id="loading-status">Đang tải file lên server...</p>
+        </div>
+
+        <div id="results">
+            </div>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const loadingEl = document.getElementById('loading');
+        const resultsEl = document.getElementById('results');
+
+        // Test connectivity khi load trang
+        async function testConnection() {
+            const statusEl = document.getElementById('connection-status');
+
+            try {
+                const response = await fetch(TEST_ENDPOINT);
+                const data = await response.json();
+                console.log('✅ Kết nối Flask thành công:', data);
+
+                // Hiển thị status thành công
+                statusEl.style.background = '#d4edda';
+                statusEl.style.color = '#155724';
+                statusEl.style.border = '1px solid #c3e6cb';
+                statusEl.innerHTML = `✅ Kết nối thành công! (ENABLE_VECTOR = ${data.enable_vector})`;
+
+                return true;
+            } catch (error) {
+                console.error('❌ Không thể kết nối Flask:', error);
+
+                // Hiển thị status lỗi
+                statusEl.style.background = '#f8d7da';
+                statusEl.style.color = '#721c24';
+                statusEl.style.border = '1px solid #f5c6cb';
+                statusEl.innerHTML = '❌ Không thể kết nối Flask server! Hãy chắc chắn đã chạy <code>python app.py</code>';
+
+                return false;
+            }
+        }
+
+        // Test ngay khi load trang
+        window.addEventListener('load', () => {
+            testConnection();
+        });
+
+        // API Endpoint - Dùng relative path vì serve từ cùng Flask server
+        const API_ENDPOINT = '/read_cv';
+        const TEST_ENDPOINT = '/api/test';
+
+        // --- Event Listeners (Không thay đổi) ---
+        dropZone.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) handleFile(e.target.files[0]);
+        });
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault(); dropZone.classList.add('dragover');
+        });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault(); dropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+        });
+
+        // === HÀM XỬ LÝ CHÍNH (ĐÃ NÂNG CẤP) ===
+        async function handleFile(file) {
+            if (file.type !== 'application/pdf') {
+                alert('Lỗi: Chỉ chấp nhận file .pdf');
+                return;
+            }
+
+            console.log('Đã nhận file:', file.name);
+
+            // === HIỂN THỊ LOADING, ẨN KẾT QUẢ CŨ ===
+            const loadingMsg = document.getElementById('loading-message');
+            const loadingStatus = document.getElementById('loading-status');
+
+            loadingMsg.textContent = '⬆️ Đang tải file lên...';
+            loadingStatus.textContent = 'Đang upload ' + file.name;
+            loadingEl.style.display = 'block';
+            resultsEl.style.display = 'none';
+            resultsEl.innerHTML = '';
+
+            const formData = new FormData();
+            formData.append('cv_file', file);
+
+            try {
+                // Cập nhật status: Đang xử lý
+                loadingMsg.textContent = '🧠 AI đang đọc và phân tích...';
+                loadingStatus.textContent = 'Trích xuất thông tin từ PDF... (có thể mất 30-60s nếu load model lần đầu)';
+
+                // Tạo AbortController để handle timeout
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 300000); // 5 phút timeout
+
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    body: formData,
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+
+                loadingMsg.textContent = '✅ Hoàn tất! Đang hiển thị kết quả...';
+                loadingStatus.textContent = '';
+
+                const data = await response.json();
+                console.log('=== DEBUG: Response received ===');
+                console.log('Status:', response.status);
+                console.log('Data:', data);
+
+                if (!response.ok) {
+                    console.error('Response not OK:', data);
+                    throw new Error(data.error || `Lỗi server (${response.status})`);
+                }
+
+                if (!data.success) {
+                    console.error('Success = false:', data);
+                    throw new Error(data.error || 'Unknown error');
+                }
+
+                console.log('Đã nhận kết quả:', data);
+
+                try {
+                    displayResults(data);
+                } catch (displayError) {
+                    console.error('❌ LỖI trong displayResults():', displayError);
+                    throw new Error('Lỗi khi hiển thị kết quả: ' + displayError.message);
+                }
+
+            } catch (error) {
+                console.error('Lỗi khi gọi API:', error);
+                let errorMsg = error.message;
+                if (error.name === 'AbortError') {
+                    errorMsg = 'Request timeout (>5 phút). Server có thể đang load model mBERT lần đầu. Hãy thử lại sau vài phút.';
+                }
+                resultsEl.innerHTML = `<div class="error-message">❌ Lỗi: ${errorMsg}</div>`;
+                resultsEl.style.display = 'block';
+            } finally {
+                loadingEl.style.display = 'none';
+            }
+        }
+
+        // === HÀM MỚI: HIỂN THỊ KẾT QUẢ ĐẸP MẮT ===
+        function displayResults(data) {
+            console.log('displayResults() called with:', data);
+
+            if (!data || !data.results_human) {
+                console.error('Data invalid:', data);
+                throw new Error('Response data không hợp lệ');
+            }
+
+            let htmlContent = '<h3>✅ Kết quả "Đọc Hiểu":</h3>';
+
+            // --- Phần 1: Trích xuất (Cho Người xem) ---
+            htmlContent += '<div class="section">';
+            htmlContent += '<span class="section-title">--- PHẦN 1: TRÍCH XUẤT (CHO NGƯỜI XEM) ---</span>';
+
+            const humanData = data.results_human || {};
+            const displayOrder = [ // Sắp xếp thứ tự hiển thị
+                'email', 'phone', 'links', 'gpa', 'objective', 'education',
+                'experience', 'projects', 'skills', 'activities', 'certificates', 'info'
+            ];
+
+            displayOrder.forEach(key => {
+                if (humanData[key]) {
+                    htmlContent += `<span class="section-title">${formatTitle(key)}:</span>`;
+                    // Định dạng đặc biệt cho links
+                    if (key === 'links' && Array.isArray(humanData[key])) {
+                         htmlContent += '<ul>';
+                         humanData[key].forEach(link => {
+                             htmlContent += `<li><a href="${link}" target="_blank">${link}</a></li>`;
+                         });
+                         htmlContent += '</ul>';
+                    } else {
+                        htmlContent += `<pre>${escapeHtml(humanData[key]) || '(Không tìm thấy)'}</pre>`;
+                    }
+                }
+            });
+             htmlContent += '</div>';
+
+
+            // --- Phần 2: Vector (Cho Máy học) ---
+            htmlContent += '<div class="section">';
+            htmlContent += '<span class="section-title">--- PHẦN 2: VECTOR \'DẤU VÂN TAY\' (CHO MÁY HỌC) ---</span>';
+            const vectorPreview = data.results_ai_vector_preview;
+
+            if (vectorPreview && typeof vectorPreview !== 'string') {
+                 htmlContent += `<p class="vector-preview">✅ Đã tạo vector (1, 768)! (Xem trước 10 số đầu)</p>`;
+                 htmlContent += `<pre>${JSON.stringify(vectorPreview, null, 2)}</pre>`;
+            } else {
+                 htmlContent += `<p class="vector-preview error-message">${vectorPreview || '(Không thể tạo vector)'}</p>`;
+            }
+             htmlContent += '</div>';
+
+            // Đưa HTML vào trang web
+            console.log('Setting innerHTML, length:', htmlContent.length);
+            resultsEl.innerHTML = htmlContent;
+            resultsEl.style.display = 'block'; // Hiển thị khu vực kết quả
+            console.log('✅ displayResults() hoàn tất!');
+        }
+
+        // === Hàm phụ trợ ===
+        function formatTitle(key) {
+            // Chuyển key thành tiêu đề đẹp hơn (VD: 'projects' -> '🚀 DỰ ÁN (PROJECTS)')
+             const titles = {
+                email: '📧 Email', phone: '📱 Phone', links: '🔗 Links', gpa: '🎓 GPA/CGPA',
+                objective: '🎯 MỤC TIÊU (OBJECTIVE)', education: '🎓 HỌC VẤN (EDUCATION)',
+                experience: '💼 KINH NGHIỆM / THỰC TẬP (EXPERIENCE/INTERNSHIP)',
+                projects: '🚀 DỰ ÁN (PROJECTS)', skills: '🛠️ KỸ NĂNG (SKILLS)',
+                activities: '🌟 HOẠT ĐỘNG / THÀNH TÍCH (ACTIVITIES/ACHIEVEMENTS)',
+                certificates: '🏆 CHỨNG CHỈ (CERTIFICATES)', info: 'ℹ️ THÔNG TIN KHÁC'
+             };
+             return titles[key] || key.toUpperCase(); // Mặc định là viết hoa key
+        }
+
+        function escapeHtml(unsafe) {
+            // Chuyển ký tự đặc biệt thành HTML entities để hiển thị đúng trong <pre>
+            if (typeof unsafe !== 'string') return unsafe;
+             return unsafe
+                  .replace(/&/g, "&amp;")
+                  .replace(/</g, "&lt;")
+                  .replace(/>/g, "&gt;")
+                  .replace(/"/g, "&quot;")
+                  .replace(/'/g, "&#039;");
+        }
+
+    </script>
+</body>
+</html>
