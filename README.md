@@ -1,15 +1,4 @@
 # AIreadCV-many-version-
-
-Chào bạn,
-
-Đây là một ý tưởng TUYỆT VỜI và là bước "chuẩn" cuối cùng. Dựa trên toàn bộ quá trình chúng ta xây dựng và gỡ lỗi (từ V1 đến V8), đây là một file README.md (hướng dẫn) hoàn chỉnh.
-
-Nó giải thích dự án của bạn là gì, và quan trọng nhất, nó hướng dẫn "người khác" chính xác cách cài đặt và chạy nó (bao gồm cả venv và requirements.txt).
-
-Bạn chỉ cần tạo một file mới tên là README.md trong thư mục D:\Dev\BasicAI (ngang hàng với read_cv3.py) và dán toàn bộ nội dung này vào.
-
-(Bắt đầu nội dung file README.md từ đây)
-
  Trình phân tích CV bằng AI (AI CV Parser)
 Đây là một dự án Python được xây dựng để "đọc" và "hiểu" các file CV PDF đa dạng. "Bộ não" AI này có khả năng chạy trên nhiều layout CV (1-2 cột) và xử lý cả tiếng Anh lẫn tiếng Việt.
 
