@@ -1,0 +1,11 @@
+# Môi trường ảo (Quan trọng nhất)
+venv/
+
+# Thư mục cache của Python
+__pycache__/
+
+# Cài đặt riêng của VS Code
+.vscode/
+
+# Bỏ qua file CV test cụ thể này
+LyMinh-CV.pdf
