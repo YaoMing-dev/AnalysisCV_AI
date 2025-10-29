@@ -4,6 +4,7 @@ import io
 from pypdf import PdfReader, errors
 import torch
 from transformers import AutoModel, AutoTokenizer
+from unidecode import unidecode  # ← Thêm để bỏ dấu tiếng Việt
 
 # === IMPORT CẤU HÌNH CHUNG ===
 try:
@@ -92,17 +93,38 @@ def extract_text_from_pdf(pdf_path):
 
 # === BƯỚC 2A: "BỘ NÃO" V7 (TRÍCH XUẤT CHO NGƯỜI XEM) ===
 def create_flexible_pattern(keyword):
-    """Tạo regex pattern 'thông minh', xử lý dãn chữ (H O Ạ T)"""
-    pattern_chars = r'\s*'.join(re.escape(c) for c in keyword)
-    return r"(?:^|\n)\s*" + pattern_chars + r"\s*(?:\n|$)"
+    """
+    Tạo regex pattern 'thông minh', xử lý dãn chữ (H O Ạ T) và PDF encoding lỗi.
+    Cho phép khoảng trắng, dấu, và ký tự Unicode tương tự giữa các ký tự.
+    """
+    # Cho phép: khoảng trắng, dấu (ñ ệ ố ữ...), và ký tự combining Unicode
+    flexible_space = r'[\s\u0300-\u036f]*'  # Whitespace + combining diacritical marks
+    pattern_chars = flexible_space.join(re.escape(c) for c in keyword)
+    return r"(?:^|\n)\s*" + pattern_chars + flexible_space + r"\s*(?:\n|$)"
+
+def normalize_vietnamese_text(text):
+    """
+    Chuẩn hóa text tiếng Việt bị tách ký tự: "Họ c v ấ n" → "Họcvấn"
+    Xử lý PDF encoding lỗi bằng cách loại bỏ khoảng trắng đơn giữa ký tự
+    """
+    # Loại bỏ khoảng trắng đơn giữa 2 ký tự đơn (1-2 ký tự)
+    # Lặp nhiều lần để xử lý chuỗi dài
+    for _ in range(10):
+        before = text
+        # Match: 1-2 ký tự + 1 space + 1-2 ký tự
+        text = re.sub(r'(\w{1,2}) (\w{1,2})', r'\1\2', text)
+        if text == before:  # Không thay đổi nữa thì dừng
+            break
+    return text
+
 
 def extract_key_info(cv_text):
-    """Dùng Regex V7 để "tái cấu trúc" CV đa dạng (Anh/Việt, 1/2 cột)."""
+    """Dùng Regex V7 để "tái cấu trúc" CV đa dạng (Anh/Việt, 1/2 cột) - CẢI TIẾN ĐỌC ĐẦY ĐỦ."""
     info = {
         "email": None, "phone": None, "links": [], "gpa": None,
         "education": None, "skills": None, "projects": None,
-        "activities": None, "certificates": None, "experience": None,
-        "objective": None, "info": None,
+        "activities": None, "certificates": None, "awards": None,  # ← THÊM MỚI
+        "experience": None, "objective": None, "info": None,
     }
 
     # === Phần 1: Trích xuất thông tin đơn lẻ (Đa dạng) ===
@@ -115,35 +137,76 @@ def extract_key_info(cv_text):
     gpa_match = re.search(r"(GPA|CGPA)\s*:?.*?([\d\.]+)", cv_text, re.IGNORECASE | re.DOTALL)
     if gpa_match: info["gpa"] = gpa_match.group(2).strip()
 
-    # === Phần 2: "Bộ Não" V7 - Trích xuất Section (Đa Ngôn Ngữ) ===
+    # ✅ FIX: Chuẩn hóa text trước khi extract sections
+    # Bước 1: Gộp ký tự bị tách (Họ c v ấ n → Họcvấn)
+    cv_text_normalized = normalize_vietnamese_text(cv_text)
+    # Bước 2: Bỏ dấu để match dễ dàng hơn (Họcvấn → Hocvan)
+    cv_text_ascii = unidecode(cv_text_normalized).lower()
+
+    # === Phần 2: "Bộ Não" V7 CẢI TIẾN - Trích xuất Section (XỬ LÝ DẤU PDF) ===
+    # Sử dụng keywords KHÔNG DẤU để match với cv_text_ascii
     ALL_SECTION_DEFINITIONS = {
-        "education":    ["Học vấn", "EDUCATION"],
-        "experience":   ["Kinh nghiệm làm việc", "INTERNSHIPS", "INTERNSHIP", "EXPERIENCE"],
-        "projects":     ["Dự án cá nhân", "PROJECTS", "DESIGN PROJECT"],
-        "skills":       ["Kỹ năng", "SKILLS", "PROGRAMMING SKILLS"],
-        "activities":   ["Hoạt động", "ACHIEVEMENTS & ACTIVITIES", "ACHIEVEMENTS"],
-        "certificates": ["Chứng chỉ", "CERTIFICATES", "CERTIFICATIONS"],
-        "objective":    ["Mục tiêu nghề nghiệp", "CAREER OBJECTIVE", "OBJECTIVE"],
-        "info":         ["Thông tin thêm", "STRENGTHS", "HOBBIES", "LANGUAGE"]
+        "education": [
+            "hocvan", "education", "academic background"
+        ],
+        "experience": [
+            "kinhnghiemlamviec", "kinhnghiemtronghoctap",
+            "experience", "work experience", "professional experience",
+            "internships", "internship"
+        ],
+        "projects": [
+            "duan", "duancanhan", "kinhnghiemtronghoctap",
+            "projects", "project experience", "design project",
+            "personal projects", "academic projects"
+        ],
+        "skills": [
+            "kynang", "kynangchuyenmon",
+            "skills", "technical skills", "programming skills",
+            "core competencies", "expertise"
+        ],
+        "awards": [
+            "giaithuong", "danhhieuvagiai thuong", "danhhieu",
+            "awards", "honors", "achievements", "recognitions"
+        ],
+        "certificates": [
+            "chungchi",
+            "certificates", "certifications", "credentials"
+        ],
+        "activities": [
+            "hoatdong", "hoatdongngoaikhoa",
+            "activities", "extracurricular activities",
+            "volunteer", "volunteering", "leadership"
+        ],
+        "objective": [
+            "muctieunghénghiep", "muctieu",
+            "career objective", "objective", "professional summary",
+            "summary", "profile"
+        ],
+        "info": [
+            "thongtinthem", "sothich",
+            "strengths", "hobbies", "interests",
+            "language", "languages"
+        ]
     }
     section_matches = []
     for key, titles in ALL_SECTION_DEFINITIONS.items():
         for title in titles:
             pattern = create_flexible_pattern(title)
-            match = re.search(pattern, cv_text, re.IGNORECASE)
+            match = re.search(pattern, cv_text_ascii, re.IGNORECASE)  # ← SỬ DỤNG ASCII text
             if match:
                 section_matches.append((match.start(), key, match))
                 break
     section_matches.sort(key=lambda x: x[0])
 
+    # Extract content từ ORIGINAL normalized text (còn dấu) để giữ nguyên tiếng Việt
     for i in range(len(section_matches)):
         current_key = section_matches[i][1]
         current_match = section_matches[i][2]
         start_index = current_match.end()
-        end_index = len(cv_text)
+        end_index = len(cv_text_normalized)
         if i < len(section_matches) - 1:
             end_index = section_matches[i+1][0]
-        content = cv_text[start_index:end_index].strip()
+        content = cv_text_normalized[start_index:end_index].strip()  # ← Trả về text có dấu
         content = re.sub(r'^[\n\s]+|[\n\s]+$', '', content)
         content = re.sub(r'(\n\s*){2,}', '\n', content)
         if content:
@@ -244,6 +307,15 @@ def main():
 
         print("\n--- 🛠️ KỸ NĂNG (SKILLS) ---")
         print(results.get('skills', '  (Không tìm thấy)'))
+
+        print("\n--- 🏆 GIẢI THƯỞNG / DANH HIỆU (AWARDS) ---")
+        print(results.get('awards', '  (Không tìm thấy)'))
+
+        print("\n--- 📜 CHỨNG CHỈ (CERTIFICATES) ---")
+        print(results.get('certificates', '  (Không tìm thấy)'))
+
+        print("\n--- 🎭 HOẠT ĐỘNG (ACTIVITIES) ---")
+        print(results.get('activities', '  (Không tìm thấy)'))
 
         # === IN KẾT QUẢ CỦA "CON MẮT" AI ===
         print("\n--- PHẦN 2: VECTOR 'DẤU VÂN TAY' (CHO MÁY HỌC) ---")

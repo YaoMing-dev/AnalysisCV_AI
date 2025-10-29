@@ -1,11 +1,77 @@
-# Môi trường ảo (Quan trọng nhất)
-venv/
-
-# Thư mục cache của Python
+# ==========================
+# PYTHON ENVIRONMENT
+# ==========================
 __pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+ENV/
+env/
 
-# Cài đặt riêng của VS Code
+# ==========================
+# IDE / EDITOR SETTINGS
+# ==========================
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Bỏ qua file CV test cụ thể này
+# ==========================
+# TEST / DEBUG / BACKUP FILES
+# ==========================
+test_*.py
+debug_*.py
+demo_*.py
+check_*.py
+verify_*.py
+analyze_*.py
+fix_*.py
+*_backup.py
+
+# ==========================
+# MODEL / CACHE / TEMP FILES
+# ==========================
+*.pkl
+*.pt
+*.ckpt
+*.h5
+*.sav
+*.tmp
+*.log
+
+# ==========================
+# OS / SYSTEM FILES
+# ==========================
+Thumbs.db
+.DS_Store
+
+# ==========================
+# UPLOADS / OUTPUTS / BUILD
+# ==========================
+uploads/
+dist/
+build/
+__pycache__/
+*.egg-info/
+
+# ==========================
+# GIỮ LẠI FILE CẦN THIẾT
+# ==========================
+!app.py
+!config.py
+!index.html
+!read_cv4.py
+!thebrain.py
+!requirements.txt
+!*.csv
+!*.pdf
+!*.md
+
+# ==========================
+# IGNORE RIÊNG 1 SỐ FILE PDF CỤ THỂ
+# ==========================
 LyMinh-CV.pdf
+Mai-CV.pdf
+Thanh-CV.pdf
