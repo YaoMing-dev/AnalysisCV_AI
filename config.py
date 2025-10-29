@@ -48,3 +48,10 @@ AUTO_FIX_PDF_HEADER = True
 
 # In log chi tiết
 VERBOSE_LOGGING = True
+
+
+# Đường dẫn đến file model đã huấn luyện
+BRAIN_MODEL_PATH = 'thebrain_model.pkl'
+
+# Vị trí ứng tuyển mặc định nếu web không gửi lên
+DEFAULT_JOB_LEVEL = 'Mid'
