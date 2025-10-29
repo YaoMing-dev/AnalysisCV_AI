@@ -113,24 +113,28 @@ def handle_cv_upload():
             candidate_seniority = score_breakdown.get('seniority', 'Unknown')
             red_flag_penalty = score_breakdown.get('red_flag_penalty', 0)
 
-            # === BƯỚC 5: CHẤM ĐIỂM BẰNG AI (ML Model) ===
-            base_ml_score = None
+            # === BƯỚC 5: CHẤM ĐIỂM BẰNG AI (ML Model) - CHỈ ĐỂ THAM KHẢO ===
+            ml_score = None
             if g_brain_model:
                 print("🧠 Bước 5: Chấm điểm bằng AI (thebrain ML)...", flush=True)
-                base_ml_score = g_brain_model.predict(cv_data_row) #
+                ml_score = g_brain_model.predict(cv_data_row) #
+                print(f"   📏 Điểm Luật: {rule_score:.2f}/100", flush=True)
+                print(f"   🤖 Điểm AI: {ml_score:.2f}/100", flush=True)
             else:
                 print("🧠 Bước 5: Bỏ qua chấm điểm AI (model .pkl chưa load).")
-                base_ml_score = rule_score # Dùng tạm điểm của Luật nếu ko có model
+            
+            # === DÙNG RULE SCORE LÀM BASE (NHẤT QUÁN VỚI thebrain.py) ===
+            base_score = rule_score  # SỬ DỤNG RULE SCORE, KHÔNG DÙNG ML
 
             # === BƯỚC 6: TÍNH ĐIỂM PHÙ HỢP CÔNG VIỆC (TỪ thebrain) ===
             print("🧠 Bước 6: Tính điểm phù hợp (thebrain)...", flush=True)
             match_adjustment = calculate_job_match_adjustment(
                 candidate_seniority, 
                 target_job_level, 
-                base_ml_score
+                base_score  # Dùng rule_score
             ) #
             
-            final_score = base_ml_score + match_adjustment
+            final_score = base_score + match_adjustment
             final_score = min(max(final_score, 0), 100) # Đảm bảo điểm từ 0-100
 
             # (Tùy chọn) BƯỚC 7: Vector hóa
@@ -155,7 +159,9 @@ def handle_cv_upload():
                     "detected_industry": detected_industry,
                     "candidate_seniority": candidate_seniority,
                     "red_flag_penalty": red_flag_penalty,
-                    "base_ml_score": float(base_ml_score), # Chuyển sang float
+                    "rule_score": float(rule_score),  # THÊM: Điểm luật
+                    "ml_score": float(ml_score) if ml_score is not None else None,  # THÊM: Điểm ML (tham khảo)
+                    "base_score": float(base_score),  # Base score = rule_score
                     "match_adjustment": float(match_adjustment),
                     "final_score": float(final_score),
                     "score_breakdown_details": score_breakdown # Gửi toàn bộ chi tiết điểm

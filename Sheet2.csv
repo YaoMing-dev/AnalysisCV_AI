@@ -1,56 +1,481 @@
 ﻿cv_id,full_name,email,phone,links,objective,education_level,school_name,major,graduation_year,gpa,company_name,job_title,start_date,end_date,job_description,project_name,project_role,project_technologies,project_description,skills_list,activity_certificate
-CV001,Nguyễn Văn An,an.nguyen@email.com,912345678,[URL]; [URL],"""Tìm kiếm vị trí Phát triển phần mềm",Đại học,Đại học Bách Khoa TP.HCM,Kỹ thuật Phần mềm,2025.0,3.5,FPT Software,Thực tập sinh Phát triển Web,01/06/2024,10/2024,Phát triển và bảo trì các module front-end bằng ReactJS; Hỗ trợ kiểm thử và sửa lỗi.,Hệ thống Quản lý Thư viện,Frontend Developer,ReactJS; Node.js; MongoDB,"""Phát triển ứng dụng web cho phép người dùng quản lý sách"," mượn trả và tìm kiếm thông tin hiệu quả.""",
-CV002,Trần Thị Bình,binh.tran@email.com,987654321,[URL],Tìm kiếm cơ hội phát triển sự nghiệp trong lĩnh vực Phân tích dữ liệu.,Đại học Kinh tế Quốc dân,Khoa học Dữ liệu,2024,8.8,VinGroup,Chuyên viên Phân tích Dữ liệu,01/01/2023,01/2024,Phân tích dữ liệu kinh doanh để đưa ra các insights chiến lược; Xây dựng báo cáo tự động.,Phân tích Xu hướng Thị trường,Data Analyst,Python; R; SQL; Tableau,Thực hiện phân tích dữ liệu thị trường để dự đoán xu hướng tiêu dùng và đưa ra khuyến nghị sản phẩm.,Python; R; SQL; Excel; Tableau,Chứng chỉ Data Science của Coursera,
-CV003,Lê Minh Cường,cuong.le@email.com,777112233,[URL]; [URL],Mong muốn đóng góp vào các dự án phát triển game với vai trò lập trình viên.,Cao đẳng FPT Polytechnic,Lập trình Game,2026,7.9,Gameloft,Intern Lập trình Game,01/03/2024,09/2024,Phát triển các tính năng game mới trên Unity; Hỗ trợ tối ưu hóa hiệu suất và debug.,"""Game """"Space Defender""""""",Game Developer,C#; Unity; Blender,Xây dựng một game bắn súng không gian 2D với các level và kẻ thù đa dạng.,C#; Unity; Git; Photoshop,Thành viên Câu lạc bộ Lập trình Game,
-CV004,Phạm Ngọc Diệp,diep.pham@email.com,888990011,[URL],Tìm kiếm vị trí Marketing Chuyên nghiệp để phát triển thương hiệu.,Đại học Ngoại thương,Marketing,2023,8.5,P&G Vietnam,Trợ lý Marketing,01/07/2023,Hiện tại,Hỗ trợ lập kế hoạch và triển khai các chiến dịch marketing số; Quản lý nội dung trên các kênh truyền thông.,"""Chiến dịch """"Green Living""""""",Marketing Executive,Facebook Ads; Google Ads; SEO,Xây dựng chiến dịch truyền thông nhằm nâng cao nhận thức về sản phẩm thân thiện môi trường.,Digital Marketing; Content Creation; SEO,Giải Nhì cuộc thi Marketing Challenge,
-CV005,Hoàng Gia Huy,huy.hoang@email.com,909123123,[URL]; [URL],Mong muốn thử thách bản thân trong lĩnh vực Khoa học Dữ liệu và AI.,Đại học Khoa học Tự nhiên,Khoa học máy tính (AI),2026,9.2,Viettel AI,Thực tập sinh Nghiên cứu AI,01/09/2024,Hiện tại,Nghiên cứu và phát triển các mô hình học máy cho xử lý ngôn ngữ tự nhiên; Thực hiện các thử nghiệm và đánh giá.,Hệ thống Hỏi đáp Thông minh,AI Researcher,Python; TensorFlow; Keras,Phát triển hệ thống có khả năng hiểu và trả lời câu hỏi của người dùng dựa trên tri thức đã có.,Python; Machine Learning; Deep Learning,Tham gia hội thảo AI Global Summit,
-CV006,Nguyễn Thị Hương,huong.nguyen@email.com,345678901,[URL],"""Tìm kiếm vị trí Thiết kế UI/UX",Đại học,Đại học Kiến trúc TP.HCM,Thiết kế Đồ họa,2024.0,8.7,Techcombank,Thực tập sinh UI/UX,01/05/2024,11/2024,Thiết kế giao diện người dùng cho ứng dụng di động; Thực hiện các nghiên cứu về trải nghiệm người dùng.,Ứng dụng Ngân hàng Di động,UI/UX Designer,Figma; Sketch; Adobe XD,"""Thiết kế lại giao diện người dùng cho một ứng dụng ngân hàng"," cải thiện khả năng sử dụng và thẩm mỹ.""",
-CV007,Đỗ Trọng Khoa,khoa.do@email.com,901234567,[URL]; [URL],"""Khát khao trở thành Kỹ sư DevOps",Đại học,Đại học Công nghệ TP.HCM,Kỹ thuật Máy tính,2025.0,3.6,ZaloPay,Intern DevOps Engineer,01/08/2024,Hiện tại,Hỗ trợ triển khai và quản lý cơ sở hạ tầng trên đám mây; Tự động hóa các tác vụ CI/CD.,Hệ thống CI/CD cho Microservices,DevOps Engineer,Docker; Kubernetes; Jenkins,"""Xây dựng và duy trì pipeline CI/CD tự động cho các dịch vụ microservices"," giảm thời gian triển khai.""",
-CV008,Bùi Thanh Lâm,lam.bui@email.com,707889900,[URL],Mong muốn phát triển sự nghiệp trong lĩnh vực Kiểm thử Phần mềm.,Đại học Sài Gòn,Công nghệ Thông tin,2024,8.2,TMA Solutions,Thực tập sinh Kiểm thử Phần mềm,01/02/2024,08/2024,Thực hiện kiểm thử chức năng và phi chức năng; Viết test case và báo cáo lỗi.,Hệ thống E-commerce,QA Tester,Selenium; Jira; TestRail,"""Thực hiện kiểm thử toàn diện cho một nền tảng thương mại điện tử"," đảm bảo chất lượng sản phẩm.""",Manual Testing; Automation Testing; SQL,
-CV009,Nguyễn Thị Mai,mai.nguyen@email.com,908765432,[URL]; [URL],"""Tìm kiếm vị trí Quản lý Dự án IT",Thạc sĩ,Đại học RMIT Vietnam,Quản lý IT,2023.0,9,NashTech,Trợ lý Quản lý Dự án,01/09/2023,Hiện tại,"""Hỗ trợ quản lý tiến độ dự án"," tài nguyên và ngân sách; Phối hợp với các bên liên quan.""",Phát triển Ứng dụng Quản lý Nội bộ,Project Coordinator,JIRA; Confluence; Agile,Tổ chức và theo dõi các hoạt động phát triển ứng dụng quản lý công việc và tài liệu nội bộ.,
-CV010,Trần Duy Nam,nam.tran@email.com,333221100,[URL],"""Mong muốn trở thành Chuyên viên An ninh Mạng",Đại học,Học viện An ninh Nhân dân,An toàn Thông tin,2025.0,3.7,CyStack,Thực tập sinh An ninh Mạng,01/07/2024,Hiện tại,Thực hiện kiểm tra lỗ hổng bảo mật; Phân tích log hệ thống và báo cáo sự cố.,Hệ thống Phát hiện Xâm nhập (IDS),Security Analyst,Kali Linux; Wireshark; Nmap,Xây dựng một hệ thống phát hiện xâm nhập cơ bản để giám sát lưu lượng mạng và cảnh báo các hoạt động đáng ngờ.,Network Security; Ethical Hacking; Linux,
-CV011,Phan Đình Quyết,911223344,[URL],quyet.phan@email.com,"""Tìm kiếm vị trí Phát triển di động (Android)",Đại học,Đại học FPT,Kỹ thuật Phần mềm,2025.0,3.8,VNG,Thực tập sinh Phát triển Android,01/06/2024,10/2024,Phát triển và bảo trì các tính năng ứng dụng Android bằng Kotlin; Hỗ trợ kiểm thử UI.,Ứng dụng Đặt Lịch Hẹn Online,Android Developer,Kotlin; Android Studio; Firebase,Phát triển một ứng dụng cho phép người dùng đặt lịch hẹn với các dịch vụ khác nhau một cách dễ dàng.,Kotlin; Java; Android SDK; Git,
-CV012,Võ Thị Thu Sương,977889900,[URL]; [URL],suong.vo@email.com,Mong muốn ứng dụng kiến thức và kỹ năng về Big Data vào các dự án lớn.,Đại học Quốc gia TP.HCM,Khoa học Dữ liệu,2024,9.1,Lazada,Chuyên viên Big Data,01/01/2023,01/2024,"""Thu thập"," xử lý và phân tích dữ liệu lớn bằng Spark/Hadoop; Xây dựng các mô hình dự đoán.""",Phân tích Dữ liệu Khách hàng,Big Data Engineer,Apache Spark; Hadoop; Python,"""Xây dựng pipeline dữ liệu để phân tích hành vi mua sắm của khách hàng"," tối ưu hóa chiến dịch cá nhân hóa.""",
-CV013,Huỳnh Ngọc Trâm,766554433,[URL],tram.huynh@email.com,"""Khát khao trở thành chuyên gia về Cybersecurity",Đại học,Đại học An ninh Nhân dân,An toàn Thông tin,2026.0,3.9,VNPT,Thực tập sinh An ninh Mạng,01/03/2024,09/2024,Thực hiện kiểm tra thâm nhập (penetration testing); Phân tích các mối đe dọa bảo mật.,Hệ thống Giám sát Mạng,Security Analyst,Metasploit; Wireshark; Python,Xây dựng một hệ thống giám sát mạng đơn giản để phát hiện và cảnh báo các hoạt động bất thường.,Cybersecurity; Penetration Testing; Linux,
-CV014,Đặng Văn Việt,899887766,[URL]; [URL],viet.dang@email.com,Tìm kiếm vị trí Chuyên viên Quản lý Chất lượng (QA/QC) trong lĩnh vực phần mềm.,Đại học Mở TP.HCM,Công nghệ Thông tin,2023,8.6,Axon Active,Chuyên viên Kiểm thử Phần mềm,01/07/2023,Hiện tại,Phát triển và thực hiện các kế hoạch kiểm thử; Tự động hóa kiểm thử bằng Selenium.,Hệ thống Quản lý Dự án,QA Engineer,Selenium WebDriver; Jira,"""Thực hiện kiểm thử toàn diện cho ứng dụng quản lý dự án"," đảm bảo chất lượng và tính ổn định.""",Software Testing; Selenium; Agile,
-CV015,Bùi Thị Yến,900112233,[URL],yen.bui@email.com,"""Mong muốn trở thành Chuyên viên Quan hệ Khách hàng",Cao đẳng,Cao đẳng Kinh tế Đối ngoại,Quản trị Kinh doanh,2024.0,8.1,Sacombank,Chuyên viên Hỗ trợ Khách hàng,01/02/2024,Hiện tại,Hỗ trợ giải đáp thắc mắc và xử lý khiếu nại của khách hàng qua nhiều kênh; Cập nhật thông tin khách hàng.,Dịch vụ Chăm sóc Khách hàng 24/7,Customer Service Rep,CRM Software; Microsoft Office,"""Cải thiện quy trình chăm sóc khách hàng trực tuyến"," tăng cường sự hài lòng và giữ chân khách hàng.""",
-CV016,Dương Thanh Tùng,366778899,[URL]; [URL],tung.duong@email.com,"""Khát khao trở thành Kỹ sư Front-end",Đại học,Đại học Khoa học Tự nhiên,Khoa học Máy tính,2025.0,3.7,Glassdoor,Thực tập sinh Front-end Developer,01/09/2024,Hiện tại,Phát triển giao diện người dùng bằng ReactJS/VueJS; Đảm bảo tính tương thích trên các trình duyệt.,Trang Web Tìm Việc Làm,Frontend Developer,ReactJS; VueJS; HTML; CSS,Thiết kế và phát triển giao diện người dùng cho một trang web tìm kiếm việc làm với khả năng lọc và tìm kiếm nâng cao.,HTML; CSS; JavaScript; ReactJS; VueJS,
-CV017,Nguyễn Hồng Vân,905432109,[URL],van.nguyen@email.com,"""Tìm kiếm vị trí Thiết kế Đồ họa",Đại học,Đại học Mỹ thuật TP.HCM,Thiết kế Đồ họa,2024.0,8.9,Mắt Bão,Chuyên viên Thiết kế Đồ họa,01/01/2023,01/2024,"""Thiết kế các ấn phẩm truyền thông (banner", poster," brochure); Dựng video motion graphic.""",Thiết kế Bộ Nhận Diện Thương hiệu,Graphic Designer,Adobe Photoshop; Illustrator,
-CV018,Hồ Văn Hải,789012345,[URL]; [URL],hai.ho@email.com,"""Mong muốn phát triển sự nghiệp trong lĩnh vực Cloud Computing",Đại học,Đại học Bách Khoa Hà Nội,Kỹ thuật Máy tính,2025.0,3.6,Viettel IDC,Intern Cloud Engineer,01/08/2024,Hiện tại,Hỗ trợ triển khai và quản lý dịch vụ trên AWS/Azure; Tự động hóa các tác vụ quản lý hạ tầng.,Quản lý Hạ tầng Đám mây,Cloud Engineer,AWS; Azure; Terraform; Ansible,"""Xây dựng và quản lý môi trường đám mây cho các ứng dụng web"," đảm bảo tính sẵn sàng và khả năng mở rộng.""",
-CV019,Trần Tuấn Kiệt,906789012,[URL],kiet.tran@email.com,"""Khát khao trở thành Business Analyst",Đại học,Đại học Kinh tế TP.HCM,Hệ thống Thông tin,2024.0,8.5,Momo,Thực tập sinh Business Analyst,01/05/2024,11/2024,Thu thập và phân tích yêu cầu nghiệp vụ từ các bên liên quan; Viết tài liệu đặc tả yêu cầu.,Phát triển Tính năng Thanh toán Mới,Business Analyst,Jira; Confluence; SQL,"""Phân tích yêu cầu và thiết kế tính năng thanh toán mới cho ứng dụng ví điện tử"," cải thiện trải nghiệm người dùng.""",
-CV020,Lương Gia Linh,321098765,[URL]; [URL],linh.luong@email.com,"""Tìm kiếm vị trí Data Scientist",Thạc sĩ,Đại học Khoa học Tự nhiên,Toán Tin học,2026.0,9.3,Tiki,Thực tập sinh Data Scientist,01/09/2024,Hiện tại,Xây dựng và huấn luyện mô hình học máy cho khuyến nghị sản phẩm; Phân tích hiệu suất mô hình.,Hệ thống Khuyến nghị Sản phẩm,Data Scientist,Python; Scikit-learn; Pandas,Phát triển một hệ thống khuyến nghị sản phẩm dựa trên hành vi người dùng và đặc điểm sản phẩm.,Python; Machine Learning; R; SQL,
-CV021,Phan Văn Đạt,912345679,[URL],dat.phan@email.com,"""Tìm kiếm vị trí Kỹ sư Phần mềm",Đại học,Đại học FPT,Kỹ thuật Phần mềm,2025.0,3.7,VNG,Thực tập sinh Phát triển Web,01/07/2024,11/2024,Phát triển và bảo trì các tính năng ứng dụng web bằng JavaScript và ReactJS; Hỗ trợ kiểm thử và sửa lỗi.,Ứng dụng Quản lý Nhiệm vụ,Web Developer,ReactJS; Node.js; PostgreSQL,"""Phát triển một ứng dụng quản lý nhiệm vụ cho phép người dùng tạo"," theo dõi và hoàn thành công việc.""",
-CV022,Nguyễn Thị Thảo,987654322,[URL]; [URL],thao.nguyen@email.com,Mong muốn ứng dụng kiến thức và kỹ năng về Phân tích Dữ liệu vào các dự án kinh doanh.,Đại học Kinh tế TP.HCM,Khoa học Dữ liệu,2024,8.9,Vinamilk,Chuyên viên Phân tích Dữ liệu,01/02/2023,02/2024,Phân tích dữ liệu bán hàng để đưa ra các insights về hiệu suất sản phẩm; Xây dựng báo cáo và dashboard.,Phân tích Hiệu suất Bán hàng,Data Analyst,Python; SQL; Power BI,Thực hiện phân tích dữ liệu bán hàng để đánh giá hiệu quả các chiến dịch khuyến mãi và dự báo doanh số.,Python; SQL; Excel; Power BI,Chứng chỉ Data Analyst của Google,
-CV023,Lê Hoàng Phúc,777112234,[URL],phuc.le@email.com,"""Khát khao trở thành Kỹ sư Blockchain",Đại học,Đại học Bách Khoa TP.HCM,Kỹ thuật Máy tính,2026.0,3.8,TomoChain,Thực tập sinh Blockchain,01/04/2024,10/2024,Nghiên cứu và phát triển các smart contract trên Ethereum; Hỗ trợ kiểm thử và triển khai.,Ứng dụng Bỏ phiếu Phi tập trung,Blockchain Developer,Solidity; Ethereum; Truffle,Phát triển một ứng dụng bỏ phiếu phi tập trung an toàn và minh bạch sử dụng công nghệ blockchain.,Solidity; Ethereum; JavaScript; Git,
-CV024,Phạm Thị Kim Anh,888990012,[URL]; [URL],anh.pham@email.com,"""Tìm kiếm vị trí Chuyên viên Content Marketing",Đại học,Đại học Khoa học Xã hội và Nhân văn,Báo chí và Truyền thông,2023.0,8.6,Tiki,Chuyên viên Content Marketing,01/08/2023,Hiện tại,Lập kế hoạch và sản xuất nội dung cho các kênh truyền thông xã hội; Phân tích hiệu quả nội dung.,"""Chiến dịch """"Sách Hay Mỗi Ngày""""""",Content Creator,Content Strategy; SEO; Canva,Xây dựng chiến dịch nội dung nhằm quảng bá sách và khuyến khích văn hóa đọc trên các nền tảng số.,Content Marketing; SEO; Copywriting; Social Media,
-CV025,Hoàng Minh Quân,909123124,[URL],quan.hoang@email.com,Mong muốn thử thách bản thân trong lĩnh vực An ninh Mạng và Ethical Hacking.,Đại học Khoa học Tự nhiên,An toàn Thông tin,2026,9.0,CyStack,Thực tập sinh An ninh Mạng,01/10/2024,Hiện tại,Thực hiện kiểm tra thâm nhập (penetration testing) cho các ứng dụng web; Phân tích lỗ hổng bảo mật.,Hệ thống Phát hiện Lỗ hổng,Security Analyst,Kali Linux; Metasploit; Python,Phát triển một hệ thống tự động quét và phát hiện các lỗ hổng bảo mật trên các ứng dụng web.,Cybersecurity; Penetration Testing; Linux,Đạt chứng chỉ OSCP (Offensive Security Certified Professional),
-CV026,Nguyễn Văn Đạt,345678902,[URL]; [URL],dat.nguyen@email.com,"""Tìm kiếm vị trí Kỹ sư IoT",Đại học,Đại học Bách Khoa Hà Nội,Kỹ thuật Điện tử,2025.0,3.5,FPT Telecom,Thực tập sinh IoT Engineer,01/06/2024,12/2024,Thiết kế và phát triển các module phần cứng và phần mềm cho thiết bị IoT; Hỗ trợ kiểm thử và triển khai.,Hệ thống Nhà Thông Minh,IoT Engineer,Arduino; Raspberry Pi; Python,Phát triển một hệ thống nhà thông minh cho phép điều khiển các thiết bị điện tử từ xa qua ứng dụng di động.,IoT; Embedded Systems; Python; C++,
-CV027,Đỗ Thị Thùy Linh,901234568,[URL],linh.do@email.com,"""Khát khao trở thành Chuyên viên Quan hệ Công chúng",Đại học,Học viện Báo chí và Tuyên truyền,Quan hệ Công chúng,2024.0,8.8,Vingroup,Thực tập sinh Quan hệ Công chúng,01/03/2024,09/2024,Hỗ trợ lập kế hoạch và triển khai các chiến dịch PR; Viết thông cáo báo chí và quản lý mối quan hệ truyền thông.,"""Chiến dịch """"Vì Cộng Đồng""""""",PR Executive,Media Relations; Event Planning,Tổ chức các sự kiện và hoạt động truyền thông nhằm nâng cao hình ảnh và trách nhiệm xã hội của doanh nghiệp.,Public Relations; Event Management; Crisis Communication,
-CV028,Bùi Anh Tuấn,707889901,[URL]; [URL],tuan.bui@email.com,Mong muốn phát triển sự nghiệp trong lĩnh vực Phát triển Di động (iOS).,Đại học Khoa học Tự nhiên,Khoa học Máy tính,2025,3.6,Zalo,Intern iOS Developer,01/08/2024,Hiện tại,Phát triển và bảo trì các tính năng ứng dụng iOS bằng Swift; Hỗ trợ kiểm thử và sửa lỗi.,Ứng dụng Ghi chú Cá nhân,iOS Developer,Swift; Xcode; Firebase,"""Phát triển một ứng dụng ghi chú cá nhân đơn giản với các tính năng tạo"," chỉnh sửa và đồng bộ hóa ghi chú.""",Swift; iOS SDK; Git; UI/UX,
-CV029,Nguyễn Minh Quân,908765433,[URL],quan.nguyen@email.com,"""Tìm kiếm vị trí Quản lý Sản phẩm",Thạc sĩ,Đại học RMIT Vietnam,Quản lý Sản phẩm,2023.0,9.1,MoMo,Trợ lý Quản lý Sản phẩm,01/10/2023,Hiện tại,Hỗ trợ nghiên cứu thị trường và phân tích đối thủ cạnh tranh; Thu thập và phân tích phản hồi người dùng.,Phát triển Tính năng Ví Điện Tử Mới,Product Owner,Jira; Figma; User Research,"""Định hình và phát triển các tính năng mới cho ứng dụng ví điện tử"," cải thiện trải nghiệm và tăng cường tính năng.""",
-CV030,Trần Thị Ngọc,333221101,[URL]; [URL],ngoc.tran@email.com,"""Mong muốn trở thành Chuyên viên Phân tích Nghiệp vụ",Đại học,Đại học Kinh tế TP.HCM,Hệ thống Thông tin,2024.0,8.7,FPT Software,Thực tập sinh Business Analyst,01/07/2024,Hiện tại,Thu thập và phân tích yêu cầu nghiệp vụ từ các bên liên quan; Viết tài liệu đặc tả yêu cầu và quy trình.,Hệ thống Quản lý Khách hàng (CRM),Business Analyst,SQL; Jira; Confluence,Phân tích yêu cầu và thiết kế hệ thống CRM để quản lý thông tin khách hàng và tối ưu hóa quy trình bán hàng.,Business Analysis; SQL; Agile; UML,
-CV031,Nguyễn Văn Cường,cuong.nguyen.senior@email.com,901234567,https://github.com/cuongnv; https://linkedin.com/in/cuongnv,Tìm kiếm vị trí Senior Full-stack Developer để phát triển các hệ thống quy mô lớn với kiến trúc Microservices và Cloud-native.,Thạc sĩ,Đại học Bách Khoa Hà Nội,Khoa học Máy tính,2018.0,3.8,VNG Corporation,Senior Full-stack Developer,01/2019,Hiện tại,"Thiết kế và phát triển kiến trúc microservices cho hệ thống thanh toán phục vụ 10M+ users; Implement CI/CD pipeline với Jenkins, GitLab CI và ArgoCD; Optimize database performance (PostgreSQL, Redis) và giảm 40% response time; Lead team 5 developers, code review và mentor junior; Deploy và vận hành trên Kubernetes cluster với 99.9% uptime",ZaloPay Payment Gateway Refactoring,Tech Lead,Docker; Kubernetes; Spring Boot; React; Node.js; PostgreSQL; Redis; Kafka; Microservices; CI/CD; AWS; Terraform,Tái cấu trúc toàn bộ payment gateway từ monolith sang microservices architecture; Implement event-driven architecture với Apache Kafka; Setup monitoring với Prometheus và Grafana; Auto-scaling với Kubernetes HPA,Java; Spring Boot; React; Node.js; Docker; Kubernetes; PostgreSQL; Redis; Kafka; AWS; Microservices; CI/CD; Terraform; Prometheus; Grafana,Chứng chỉ AWS Solutions Architect Professional; Certified Kubernetes Administrator (CKA); Speaker tại Vietnam Mobile Day 2023
-CV032,Trần Thị Mai,mai.tran.devops@email.com,912345678,https://github.com/maitran; https://linkedin.com/in/maitran,Tìm kiếm vị trí DevOps Engineer để xây dựng và tối ưu hệ thống CI/CD cũng như hạ tầng cloud.,Đại học,Đại học Công nghệ TP.HCM,Kỹ thuật Máy tính,2019.0,3.7,Tiki Corporation,DevOps Engineer,06/2020,Hiện tại,"Xây dựng và duy trì CI/CD pipeline cho 50+ microservices; Infrastructure as Code với Terraform và Ansible cho AWS; Implement GitOps workflow với ArgoCD và FluxCD; Monitor và troubleshoot production issues với ELK Stack, Prometheus, Grafana; Optimize cloud cost và giảm 30% chi phí AWS hàng tháng; On-call rotation và incident management",Multi-cloud Infrastructure Automation,DevOps Lead,Terraform; Ansible; Kubernetes; Docker; AWS; GCP; Jenkins; GitLab CI; ArgoCD; Prometheus; Grafana; ELK Stack,Tự động hóa deployment infrastructure trên multi-cloud (AWS + GCP); Implement disaster recovery và backup strategy; Setup centralized logging và monitoring; Auto-scaling và cost optimization,AWS; GCP; Kubernetes; Docker; Terraform; Ansible; Jenkins; GitLab CI; Prometheus; Grafana; ELK Stack; Python; Bash; GitOps,Chứng chỉ AWS DevOps Engineer Professional; Certified Kubernetes Administrator (CKA); HashiCorp Certified Terraform Associate
-CV033,Lê Hoàng Nam,nam.le.ml@email.com,923456789,https://github.com/namlh; https://kaggle.com/namlh,Tìm kiếm vị trí AI/ML Engineer để phát triển các mô hình machine learning và deep learning cho bài toán thực tế.,Thạc sĩ,Đại học Quốc gia TP.HCM,Trí tuệ Nhân tạo,2020.0,3.9,FPT AI Center,AI/ML Engineer,09/2020,Hiện tại,"Nghiên cứu và phát triển mô hình Computer Vision cho bài toán phát hiện vật thể trong ảnh; Training và fine-tuning các mô hình BERT, GPT cho NLP tasks; Deploy ML models lên production với FastAPI, Docker và Kubernetes; Optimize model performance và giảm inference time 50%; Xây dựng data pipeline với Apache Airflow và MLflow",AI Chatbot for Customer Service,ML Engineer,Python; TensorFlow; PyTorch; Transformers; FastAPI; Docker; Kubernetes; MLflow; Airflow,Phát triển chatbot sử dụng GPT và fine-tuning trên domain-specific data; Implement RAG (Retrieval Augmented Generation) với vector database; Deploy model với auto-scaling trên Kubernetes; Achieve 90%+ customer satisfaction score,Python; TensorFlow; PyTorch; Scikit-learn; Transformers; FastAPI; Docker; Kubernetes; MLflow; Airflow; OpenCV; BERT; GPT; LangChain,Paper published at RIVF 2023; Top 10% Kaggle Competition; Google ML Bootcamp Graduate
-CV034,Phạm Minh Tuấn,tuan.pham.cloud@email.com,934567890,https://github.com/tuanpm; https://linkedin.com/in/tuanpm,Tìm kiếm vị trí Cloud Architect để thiết kế và triển khai các giải pháp cloud-native cho doanh nghiệp.,Thạc sĩ,Đại học Bách Khoa TP.HCM,Hệ thống Thông tin,2017.0,3.8,Viettel Cloud,Cloud Solutions Architect,03/2018,Hiện tại,Thiết kế kiến trúc cloud cho các dự án enterprise với AWS và Azure; Implement multi-cloud strategy và hybrid cloud solutions; Migration 50+ legacy applications sang cloud với zero downtime; Design high-availability và disaster recovery solutions; Cost optimization và FinOps implementation; Consulting và training cho client về cloud best practices,Enterprise Cloud Migration Project,Cloud Architect,AWS; Azure; GCP; Terraform; CloudFormation; Kubernetes; Docker; Microservices; Serverless,"Migration toàn bộ infrastructure của ngân hàng từ on-premise lên AWS; Implement multi-region deployment với auto-failover; Setup monitoring, logging và security compliance; Cost optimization giảm 35% infrastructure cost",AWS; Azure; GCP; Terraform; CloudFormation; Kubernetes; Docker; Serverless; Lambda; API Gateway; CloudWatch; IAM; VPC; Load Balancer,AWS Solutions Architect Professional; Azure Solutions Architect Expert; Google Cloud Professional Architect; Terraform Associate
-CV035,Võ Thị Hương,huong.vo.security@email.com,945678901,https://github.com/huongvt; https://linkedin.com/in/huongvt,Tìm kiếm vị trí Senior Security Engineer để bảo vệ hệ thống và dữ liệu khỏi các mối đe dọa an ninh mạng.,Đại học,Học viện An ninh Nhân dân,An toàn Thông tin,2019.0,3.7,CyStack,Senior Security Engineer,07/2020,Hiện tại,Thực hiện penetration testing và vulnerability assessment cho 100+ websites và mobile apps; Implement security best practices cho DevSecOps pipeline; Monitor và respond to security incidents với SIEM tools; Conduct security training và awareness cho developers; Research latest security vulnerabilities và publish security advisories,Zero Trust Security Architecture Implementation,Security Lead,Kali Linux; Metasploit; Burp Suite; OWASP; Docker; Kubernetes; AWS Security; Python,"Thiết kế và triển khai Zero Trust Architecture cho enterprise; Implement network segmentation và micro-segmentation; Setup WAF, IDS/IPS và security monitoring; Penetration testing và red team exercises",Penetration Testing; Ethical Hacking; OWASP; Kali Linux; Burp Suite; Metasploit; Python; Bash; AWS Security; Azure Security; Docker Security; SIEM; SOC,CEH (Certified Ethical Hacker); OSCP (Offensive Security Certified Professional); CISSP; Bug Bounty Hunter with $50K+ earnings
-CV036,Hoàng Văn Đạt,dat.hoang.data@email.com,956789012,https://github.com/dathv; https://kaggle.com/dathv,Tìm kiếm vị trí Senior Data Engineer để xây dựng data platform và data pipeline quy mô lớn.,Thạc sĩ,Đại học Khoa học Tự nhiên,Khoa học Dữ liệu,2018.0,3.8,Shopee Vietnam,Senior Data Engineer,05/2019,Hiện tại,Thiết kế và xây dựng data lakehouse architecture với Delta Lake và Databricks; Build real-time data pipeline xử lý 1TB+ data/day với Apache Kafka và Spark Streaming; Optimize data warehouse performance với Snowflake và BigQuery; Implement data governance và data quality framework; Collaborate with Data Scientists để deploy ML models to production,"Real-time Recommendation Data Pipeline,Data Engineering Lead,Apache Spark; Kafka; Airflow; Databricks; Delta Lake; Snowflake; BigQuery; Python; Scala""",Xây dựng real-time data pipeline cho recommendation system phục vụ 20M+ users; Stream processing với Kafka Streams và Spark Structured Streaming; Data transformation và ETL với Apache Airflow; Data quality monitoring và alerting,Apache Spark; Kafka; Airflow; Python; Scala; SQL; Databricks; Snowflake; BigQuery; Delta Lake; dbt; Docker; Kubernetes,Databricks Certified Data Engineer Professional; Snowflake SnowPro Core Certification; Google Cloud Professional Data Engineer,,
-CV037,Nguyễn Thị Lan,lan.nguyen.ux@email.com,967890123,https://behance.net/lannguyen; https://dribbble.com/lannguyen,Tìm kiếm vị trí Senior UX/UI Designer để tạo ra trải nghiệm người dùng xuất sắc cho các sản phẩm digital.,Đại học,Đại học Mỹ thuật TP.HCM,Thiết kế Đồ họa,2019.0,3.6,Sendo,Senior UX/UI Designer,08/2020,Hiện tại,"Lead design cho 5+ product features từ research đến implementation; Conduct user research, usability testing và A/B testing; Create design system và component library với Figma; Collaborate với developers để ensure design implementation; Mentor 3 junior designers và conduct design review; Design mobile app đạt 4.8/5 stars rating trên App Store",E-commerce App Redesign Project,Lead Designer,Figma; Sketch; Adobe XD; Adobe Photoshop; Illustrator; Principle; Zeplin,Redesign toàn bộ mobile app với focus vào user experience; User research với 1000+ users và usability testing; Create comprehensive design system với 200+ components; Increase conversion rate 25% sau khi redesign,Figma; Sketch; Adobe XD; Photoshop; Illustrator; InVision; Principle; Zeplin; User Research; Wireframing; Prototyping; Design System; A/B Testing,Awwwards Site of the Day; Behance Featured Project; Google UX Design Certificate; Nielsen Norman Group UX Certification
-CV038,Trần Văn Bình,binh.tran.pm@email.com,978901234,https://linkedin.com/in/binhtran,Tìm kiếm vị trí Senior Product Manager để định hình và phát triển các sản phẩm công nghệ có impact lớn.,Thạc sĩ,RMIT Vietnam,Quản trị Kinh doanh (MBA),2019.0,3.7,Tiki Corporation,Senior Product Manager,06/2020,Hiện tại,"Own product roadmap và strategy cho e-commerce platform với 5M+ MAU; Collaborate với engineering, design và business teams để deliver features; Conduct market research, competitor analysis và user feedback analysis; Define OKRs, KPIs và track product metrics; Prioritize product backlog và manage stakeholder expectations; Lead product discovery và validation process",TikiNow - 2-hour Delivery Feature,Product Owner,Jira; Confluence; Mixpanel; Google Analytics; Figma; SQL,Launch TikiNow 2-hour delivery service trong 6 tháng; User research và validate business model với MVP; Collaborate với logistics team để optimize delivery process; Achieve 100K orders trong tháng đầu launch,Product Management; Product Strategy; User Research; Data Analysis; SQL; Mixpanel; Google Analytics; Jira; Confluence; Agile; Scrum; A/B Testing; Roadmapping,Certified Scrum Product Owner (CSPO); Product School Graduate; Built product with $10M+ revenue
-CV039,Lê Thị Hằng,hang.le.marketing@email.com,989012345,https://linkedin.com/in/hangle,Tìm kiếm vị trí Senior Digital Marketing Manager để phát triển chiến lược marketing tổng thể và tăng trưởng doanh số.,Đại học,Đại học Ngoại thương,Marketing,2018.0,3.6,Lazada Vietnam,Senior Digital Marketing Manager,09/2019,Hiện tại,"Lead digital marketing team 10+ members cho e-commerce platform; Manage marketing budget $500K+/year với 5X ROAS; Execute multi-channel campaigns (SEO, SEM, Social, Email, Affiliate); Data-driven marketing với Google Analytics, Mixpanel và BI tools; Partnership với influencers và KOLs để reach target audience; Optimize conversion funnel và increase CVR 40%",Double 11 Campaign - $5M Revenue,Marketing Lead,Google Ads; Facebook Ads; SEO; Google Analytics; Mixpanel; HubSpot; Mailchimp,"Plan và execute Double 11 campaign với $200K budget; Multi-channel strategy với Ads, Email, Social, Influencer; Real-time optimization based on data và achieve $5M revenue in 24h; 300% ROAS và acquire 50K+ new customers",Digital Marketing; SEO; SEM; Google Ads; Facebook Ads; Google Analytics; Mixpanel; HubSpot; Email Marketing; Content Marketing; Social Media Marketing; Marketing Automation; A/B Testing,Google Ads Certification; Facebook Blueprint Certification; HubSpot Inbound Marketing Certification; Built campaigns with 10X ROAS
-CV040,Phạm Văn Hùng,hung.pham.ba@email.com,990123456,https://linkedin.com/in/hungpham,Tìm kiếm vị trí Senior Business Analyst để phân tích yêu cầu và tối ưu hóa quy trình kinh doanh.,Thạc sĩ,Đại học Kinh tế TP.HCM,Hệ thống Thông tin Quản lý,2019.0,3.7,Momo,Senior Business Analyst,07/2020,Hiện tại,Gather và analyze business requirements cho fintech platform với 30M+ users; Create detailed business requirement documents (BRD) và functional specifications; Conduct stakeholder interviews và workshops để elicit requirements; Data analysis với SQL và Python để support business decisions; Work với engineering team để ensure requirements implementation; Conduct UAT và ensure product quality,Momo Super App Integration Project,Lead Business Analyst,SQL; Python; Jira; Confluence; Tableau; Power BI; Excel; BPMN,Analyze và design integration của 20+ mini-apps vào Momo Super App; Process mapping với BPMN và optimize user journey; Data analysis để identify opportunities và prioritize features; Collaborate với product và engineering để deliver on time,Business Analysis; Requirements Gathering; SQL; Python; Data Analysis; Tableau; Power BI; Excel; Jira; Confluence; BPMN; Agile; Scrum; Stakeholder Management; UAT,CBAP (Certified Business Analysis Professional); Agile Analysis Certification (IIBA-AAC); Led projects with $20M+ impact
-CV041,Nguyễn Văn Khánh,khanh.nguyen.weak@email.com,901111111,,Mong muốn tìm công việc phù hợp.,Đại học,Đại học Văn Lang,Công nghệ Thông tin,2024.0,2.1,,,,,,,,,,Word; Excel,
-CV042,Trần Thị Bích,bich.tran.weak@email.com,902222222,,Tìm việc làm.,Cao đẳng,Cao đẳng FPT,Kế toán,2023.0,2.3,Công ty ABC,Nhân viên văn phòng,06/2023,12/2023,Làm công việc văn phòng chung chung. Photocopy tài liệu. Sắp xếp hồ sơ.,,,,"Gõ văn bản, photocopy, sắp xếp file",Excel; Word,
-CV043,Lê Văn Tèo,teo.le.poor@email.com,903333333,,Muốn kiếm tiền.,Đại học,Đại học Sài Gòn,Quản trị Kinh doanh,2024.0,2.0,,,,,,,,,,Biết dùng máy tính,
-CV044,Phạm Thị Dung,dung.pham.bad@email.com,904444444,,"Tìm công việc IT, muốn làm lập trình viên",Đại học,Đại học Công nghệ,Công nghệ Thông tin,2023.0,2.5,Công ty XYZ,Tập sự,01/2024,03/2024,Làm tập sự 2 tháng nhưng không được tiếp tục.,,,,HTML,,
-CV045,Hoàng Văn Yếu,yeu.hoang.weak@email.com,905555555,,Tìm việc phù hợp với bản thân.,Cao đẳng,Cao đẳng Công nghệ,Công nghệ Thông tin,2024.0,2.2,,,,,,,,,,Biết chút IT; Word; Excel,
-CV046,Nguyễn Thị Linh,linh.nguyen.qa@email.com,912223344,https://linkedin.com/in/linhnguyen,Tìm kiếm vị trí Senior QA Engineer để đảm bảo chất lượng sản phẩm với automation testing và CI/CD integration.,Đại học,Đại học Bách Khoa TP.HCM,Công nghệ Thông tin,2018.0,3.6,Tiki Corporation,Senior QA Engineer,08/2019,Hiện tại,Lead QA team 5 members cho e-commerce platform; Design và implement automation testing framework với Selenium và Cypress; API testing với Postman và Rest Assured; Performance testing với JMeter và K6; Integrate automated tests vào CI/CD pipeline; Conduct manual testing và exploratory testing; Bug tracking và test management với Jira và TestRail,E-commerce Test Automation Framework,QA Lead,Selenium; Cypress; Appium; Postman; JMeter; Jenkins; Python; JavaScript,Build comprehensive test automation framework cho web và mobile app; Achieve 80% test coverage với automated tests; Integrate tests vào CI/CD pipeline với Jenkins; Reduce testing time 60% và improve release quality,Selenium; Cypress; Appium; Postman; Rest Assured; JMeter; K6; Python; JavaScript; Jenkins; TestRail; Jira; SQL; API Testing; Performance Testing,ISTQB Advanced Test Automation Engineer; Certified Selenium Professional
-CV047,Trần Văn Phong,phong.tran.sales@email.com,923334455,https://linkedin.com/in/phongtran,Tìm kiếm vị trí Senior Sales Manager để phát triển doanh số và mở rộng thị trường.,Đại học,Đại học Kinh tế TP.HCM,Quản trị Kinh doanh,2017.0,3.5,FPT Software,Senior Sales Manager,06/2018,Hiện tại,"Manage sales team 15+ members và achieve $5M+ revenue/year; Develop sales strategy và expand to new markets (Singapore, Thailand); Build relationship với enterprise clients (banking, telecom, retail); Lead sales cycle từ prospecting đến closing deals; Negotiate contracts và partnership agreements; Sales forecasting và pipeline management với Salesforce CRM",Enterprise Sales - Banking Sector,Sales Lead,Salesforce; HubSpot; Excel; PowerPoint,Close 10+ enterprise deals với total contract value $10M+; Build sales process và playbook cho team; Achieve 150% sales quota 2 years liên tiếp; Expand client base 200% in 3 years,Enterprise Sales; B2B Sales; Account Management; Negotiation; Salesforce CRM; Sales Strategy; Pipeline Management; Contract Negotiation; Presentation Skills,Top Performer Award 3 năm liên tiếp; Closed deals with Fortune 500 companies
-CV048,Lê Thị Hoa,hoa.le.hr@email.com,934445566,https://linkedin.com/in/hoale,Tìm kiếm vị trí Senior HR Manager để phát triển chiến lược nhân sự và xây dựng văn hóa công ty.,Thạc sĩ,Đại học Quốc gia Hà Nội,Quản trị Nhân lực,2018.0,3.7,VNG Corporation,Senior HR Manager,09/2019,Hiện tại,"Lead HR team 10+ members cho company 500+ employees; Develop HR strategy, policies và procedures; Recruitment strategy và hire 200+ employees/year; Employee engagement initiatives và improve retention rate 25%; Performance management system implementation; Compensation & benefits strategy; Learning & development programs; HR analytics và workforce planning","Culture Transformation Project,HR Lead,SAP SuccessFactors; Workday; Excel; PowerPoint; HRIS""",Transform company culture và improve employee engagement score từ 60% lên 85%; Implement OKR framework company-wide; Launch learning platform với 100+ courses; Reduce employee turnover từ 25% xuống 10%,Human Resources Management; Recruitment; Talent Acquisition; Employee Engagement; Performance Management; Compensation & Benefits; HRIS; SAP SuccessFactors; Workday; HR Analytics; Labor Law,SHRM-SCP (Senior Certified Professional); Certified Professional in Learning and Performance (CPLP),,
-CV049,Phạm Văn Minh,minh.pham.finance@email.com,945556677,https://linkedin.com/in/minhpham,Tìm kiếm vị trí Senior Financial Analyst để phân tích tài chính và hỗ trợ quyết định kinh doanh.,Thạc sĩ,Đại học Ngoại thương,Tài chính Doanh nghiệp,2018.0,3.8,Momo,Senior Financial Analyst,07/2019,Hiện tại,Financial planning & analysis (FP&A) cho fintech startup với $100M+ revenue; Build financial models và forecasting cho fundraising rounds; Budgeting và cost control cho 10+ departments; Financial reporting và analysis cho management và board; Investment analysis và M&A due diligence; Collaborate với product team để optimize unit economics; Drive profitability initiatives và improve EBITDA margin,Series C Fundraising Financial Model,Financial Analyst Lead,Excel; SQL; Python; Tableau; Power BI; SAP,Build comprehensive financial model cho Series C fundraising $200M; 3-statement financial model với scenario analysis; Unit economics analysis và cohort analysis; Investor presentation với financial projections; Successfully raised $200M at $1B+ valuation,Financial Analysis; Financial Modeling; FP&A; Budgeting; Forecasting; Excel; SQL; Python; Tableau; Power BI; SAP; Financial Reporting; Investment Analysis,CFA Level 3 Candidate; Certified Financial Analyst; Led fundraising with $200M+ raised
-CV050,Võ Thị Thu,thu.vo.content@email.com,956667788,https://linkedin.com/in/thuvo; https://medium.com/@thuvo,Tìm kiếm vị trí Senior Content Marketing Manager để tạo ra nội dung chất lượng và xây dựng brand awareness.,Đại học,Đại học Khoa học Xã hội và Nhân văn,Báo chí và Truyền thông,2018.0,3.6,Shopee Vietnam,Senior Content Marketing Manager,08/2019,Hiện tại,"Lead content team 8 members và manage content strategy; Create content calendar và produce 100+ pieces of content/month; SEO content optimization và increase organic traffic 300%; Content distribution across multiple channels (blog, social, email, video); Collaborate với influencers và creators để co-create content; Content performance analysis và data-driven optimization; Brand storytelling và thought leadership",Content Marketing Strategy for E-commerce,Content Lead,WordPress; SEO; Google Analytics; Ahrefs; Canva; Adobe Premiere; Final Cut Pro,Develop comprehensive content strategy và increase website traffic từ 100K lên 1M/month; Build blog với 500+ SEO-optimized articles ranking top 3 Google; Create video content với 10M+ views on YouTube và TikTok; Increase brand awareness 400% measured by brand search volume,Content Marketing; SEO; Copywriting; Storytelling; WordPress; Google Analytics; Ahrefs; Semrush; Content Strategy; Social Media; Video Production; Adobe Premiere; Canva,HubSpot Content Marketing Certification; Google Analytics Certification; Built content with 10M+ reach
-CV051,Nguyễn Văn Long,long.nguyen.mobile@email.com,967778899,https://github.com/longnv; https://linkedin.com/in/longnv,Tìm kiếm vị trí Senior Mobile Developer (iOS/Android) để phát triển ứng dụng di động chất lượng cao.,Đại học,Đại học Công nghệ TP.HCM,Kỹ thuật Phần mềm,2018.0,3.7,Grab Vietnam,Senior Mobile Developer,07/2019,Hiện tại,Lead mobile development cho ride-hailing app với 10M+ downloads; Develop features cho iOS và Android với Swift và Kotlin; Implement clean architecture và MVVM pattern; Integrate với backend APIs và real-time services với WebSocket; Performance optimization và reduce app size 30%; Conduct code review và mentor 4 junior developers; Collaborate với design team để implement pixel-perfect UI,Super App - Multi-service Integration,Mobile Tech Lead,Swift; Kotlin; React Native; Flutter; Firebase; GraphQL; REST API,"Develop super app integrating 20+ services (ride, food, pay, mart); Implement modular architecture với dynamic feature modules; Real-time tracking với Google Maps SDK và WebSocket; Push notification với Firebase Cloud Messaging; Achieve 4.7/5 rating on App Store và Play Store",Swift; Kotlin; React Native; Flutter; iOS SDK; Android SDK; Firebase; GraphQL; REST API; WebSocket; MVVM; Clean Architecture; Git; CI/CD,iOS App of the Year Nominee; 5+ apps with 1M+ downloads; Google Associate Android Developer Certification
-CV052,Trần Thị Ngọc,ngoc.tran.scrum@email.com,978889900,https://linkedin.com/in/ngoctran,Tìm kiếm vị trí Scrum Master để facilitate Agile process và giúp team deliver value hiệu quả.,Đại học,Đại học Bách Khoa TP.HCM,Công nghệ Thông tin,2019.0,3.6,Tiki Corporation,Scrum Master,09/2020,Hiện tại,"Scrum Master cho 3 development teams (30+ members); Facilitate Scrum ceremonies (Sprint Planning, Daily Standup, Review, Retro); Remove impediments và shield team from distractions; Coach team về Agile values và practices; Collaborate với Product Owners để manage product backlog; Track team velocity và improve sprint predictability; Drive continuous improvement initiatives; Organize Agile training và workshops",Agile Transformation Initiative,Scrum Master Lead,Jira; Confluence; Miro; Trello; Azure DevOps,Lead Agile transformation cho engineering organization 100+ members; Setup Scrum framework và coach 10+ teams; Improve team velocity 40% và reduce lead time 50%; Increase team satisfaction score từ 60% lên 90%,Scrum; Agile; Kanban; Jira; Confluence; Facilitation; Coaching; Stakeholder Management; Continuous Improvement; Team Building; Conflict Resolution,Certified Scrum Master (CSM); Advanced Certified Scrum Master (A-CSM); SAFe Scrum Master; Agile Coach
-CV053,Lê Văn Hải,hai.le.backend@email.com,989990011,https://github.com/haile; https://linkedin.com/in/haile,Tìm kiếm vị trí Senior Backend Developer để xây dựng hệ thống backend scalable và reliable.,Đại học,Đại học Bách Khoa Hà Nội,Khoa học Máy tính,2018.0,3.8,Shopee Vietnam,Senior Backend Developer,06/2019,Hiện tại,Design và develop backend services cho e-commerce platform phục vụ 20M+ users; Build RESTful APIs và GraphQL với Node.js và Python; Database design và optimization với PostgreSQL và MongoDB; Implement caching strategy với Redis và improve performance 50%; Message queue với RabbitMQ và event-driven architecture; Microservices với Docker và Kubernetes; Code review và mentor junior developers,High-performance Product Search Service,Backend Tech Lead,Node.js; Python; PostgreSQL; MongoDB; Redis; RabbitMQ; Elasticsearch; Docker; Kubernetes,Build product search service xử lý 10K requests/second; Implement full-text search với Elasticsearch; Caching strategy với Redis và CDN; Database sharding và replication; Achieve 99.95% uptime và <100ms response time,Node.js; Python; Express; Django; FastAPI; PostgreSQL; MongoDB; Redis; RabbitMQ; Kafka; Elasticsearch; Docker; Kubernetes; Microservices; RESTful API; GraphQL,AWS Certified Developer Associate; 5+ years building high-traffic systems
-CV054,Phạm Thị Tâm,tam.pham.frontend@email.com,990001122,https://github.com/tampham; https://codepen.io/tampham,Tìm kiếm vị trí Senior Frontend Developer để tạo ra giao diện người dùng đẹp và hiệu suất cao.,Đại học,Đại học Khoa học Tự nhiên,Công nghệ Thông tin,2018.0,3.7,Tiki Corporation,Senior Frontend Developer,08/2019,Hiện tại,"Lead frontend development cho e-commerce website với 5M+ visitors/month; Develop với React, TypeScript và modern frontend stack; Implement responsive design và mobile-first approach; Performance optimization với code splitting, lazy loading, và caching; Build reusable component library với Storybook; Setup CI/CD pipeline với GitHub Actions; Collaborate với designers để implement pixel-perfect UI; Mentor 3 junior frontend developers",Design System & Component Library,Frontend Tech Lead,React; TypeScript; Next.js; Tailwind CSS; Styled Components; Webpack; Vite; Storybook,Build comprehensive design system với 150+ React components; Implement server-side rendering với Next.js; Optimize web performance và achieve Lighthouse score 95+; Reduce bundle size 40% và improve page load time 50%,React; TypeScript; JavaScript; Next.js; Vue.js; HTML5; CSS3; Tailwind CSS; Styled Components; Redux; React Query; Webpack; Vite; Jest; Cypress; Storybook,Top contributor on GitHub; Built UI library with 1K+ stars
-CV055,Hoàng Văn Tùng,tung.hoang.blockchain@email.com,901112233,https://github.com/tunghv; https://linkedin.com/in/tunghv,Tìm kiếm vị trí Senior Blockchain Developer để phát triển các ứng dụng phi tập trung và smart contracts.,Thạc sĩ,Đại học Bách Khoa TP.HCM,Khoa học Máy tính,2019.0,3.8,Sky Mavis (Axie Infinity),Senior Blockchain Developer,09/2020,Hiện tại,"Develop smart contracts với Solidity cho Ethereum và Polygon; Build DeFi protocols (DEX, Lending, Staking); Implement NFT marketplace và gaming features; Security audit và optimize gas costs; Integrate Web3 với frontend using ethers.js và web3.js; Build backend services để index blockchain data; Collaborate với game designers để implement tokenomics","NFT Gaming Marketplace,Blockchain Lead,Solidity; Ethereum; Polygon; Hardhat; Truffle; Web3.js; ethers.js; React; Node.js""",Develop NFT marketplace với $100M+ trading volume; Build smart contracts cho gaming economy với 1M+ users; Implement staking mechanism và reward distribution; Security audit và prevent vulnerabilities; Gas optimization giảm transaction cost 40%,Solidity; Ethereum; Polygon; Binance Smart Chain; Hardhat; Truffle; Remix; Web3.js; ethers.js; DeFi; NFT; Smart Contracts; Cryptography; React; Node.js,Certified Blockchain Developer; Built DeFi protocol with $50M+ TVL; Smart contract auditor,,
+CV101,Nguyễn Minh Anh,anhnm@gmail.com,901111111,https://github.com/anhnm; https://linkedin.com/in/anhnm; https://anhnm.dev,Senior Full-stack Engineer,Đại học,Đại học Bách Khoa Hà Nội,Khoa học máy tính,2020,3.85,"Shopee
+Tiki",Senior Software Engineer,01/2021,Present,"Senior Engineer tại Shopee với 4 năm kinh nghiệm
+Architect và develop microservices xử lý 50K requests/day
+Lead team 6 engineers (3 backend, 2 frontend, 1 QA)
+Implement event-driven architecture với Kafka
+Database optimization: sharding, replication, indexing
+Reduce API latency từ 800ms xuống 150ms
+Mentor junior/mid engineers, conduct technical interviews
+On-call rotation, incident management, postmortem analysis","E-commerce Platform
+Payment Gateway
+Real-time Notification System
+Admin Dashboard
+Search Engine",Tech Lead,"Node.js; Go; PostgreSQL; Redis; Kafka; K8s; Docker
+Go; Stripe; VNPay; Momo; State Machine
+Go; WebSocket; Firebase; Bull Queue; Redis
+React; TypeScript; Ant Design; Charts; Export
+Elasticsearch; Go; Redis; Ranking Algorithm","E-commerce platform với product catalog 1M+ SKUs, cart, checkout, order management, seller portal
+Payment orchestration với 5 gateways, saga pattern, retry logic, reconciliation, 99.95% success rate
+Real-time notifications qua FCM, email, SMS, websocket với message queue, deduplication
+Dashboard quản lý 100K+ sellers với analytics, reports, charts, filters, export Excel/PDF
+Search engine với Elasticsearch, auto-complete, faceted search, personalized ranking, handle 10M queries/day",Go; Node.js; React; TypeScript; PostgreSQL; MongoDB; Redis; Kafka; Elasticsearch; Kubernetes; Docker; Microservices; GraphQL; WebSocket; AWS; GCP; System Design; Algorithms,"AWS Solutions Architect Professional
+Google Cloud Professional Architect
+LeetCode: 800+ problems, Contest Rating 1900
+ACM ICPC Vietnam - Silver Medal 2019
+Top 5 Hackathon Shopee 2023
+Speaker tại Vietnam Web Summit 2024
+GitHub: 1500+ contributions, 2 OSS projects 800+ stars"
+CV118,Trần Văn Tú,tutv@gmail.com,918888889,https://github.com/tutv; https://medium.com/@tutv,Content Writer & SEO Specialist,Đại học,Đại học Khoa học Xã hội Nhân văn,Báo chí,2021,3.65,VnExpress,Content Writer,05/2021,Present,"Content Writer tại VnExpress với 3.5 năm kinh nghiệm
+Viết 150+ articles về công nghệ, startup, fintech
+SEO optimization: keyword research, on-page SEO, link building
+Content strategy planning và editorial calendar management
+Tăng organic traffic từ 50K lên 200K views/month
+Collaborate với Design team để tạo featured images, infographics
+Google Analytics analysis để track performance và optimize","Tech Blog Content
+SEO Landing Pages
+Guest Blogging
+Video Scripts",Content Writer,"WordPress; SEO; Google Analytics; Ahrefs; Yoast
+HTML; CSS; SEO best practices; Conversion Optimization
+Outreach; Relationship Building; High-authority Sites
+YouTube; Scriptwriting; Storytelling; Editing","150+ articles về AI, blockchain, SaaS, average 2K+ views per article, top 3 on Google for 20+ keywords
+15 landing pages với conversion rate 7%, optimized headlines, CTAs, meta descriptions
+10 guest posts on TechCrunch, The Next Web, total 100K+ views, high-quality backlinks
+50+ video scripts cho tech reviews và tutorials, total 3M+ views on YouTube",Content Writing; SEO; Copywriting; WordPress; Google Analytics; Ahrefs; SEMrush; Social Media; HTML/CSS,"Google Analytics Certification
+HubSpot Content Marketing Certified
+SEMrush SEO Fundamentals
+Top Content Writer Award 2023"
+CV116,Lương Văn Sơn,sonlv@gmail.com,916666667,https://github.com/sonlv,Mobile Developer,Đại học,Đại học Công Nghệ,Công nghệ thông tin,2022,3.65,Grab,Mobile Developer,10/2022,Present,"Mobile Developer tại Grab với 2 năm kinh nghiệm
+Develop mobile app với React Native cho iOS và Android
+Implement features: booking, tracking, payment, chat
+Optimize performance: reduce app size 30%, improve load time 40%
+Write unit tests và integration tests
+Code review và pair programming
+Collaborate với Backend, Design, Product teams","Grab Passenger App
+Driver App Features
+In-app Chat
+Push Notifications",Mobile Developer,"React Native; TypeScript; Redux; Firebase; Maps
+React Native; Real-time Updates; WebSocket
+React Native; Firebase; Image Upload; UI
+React Native; Firebase Cloud Messaging; Deep Linking","Passenger app với booking flow, real-time tracking, payment methods, order history
+Driver features: accept/reject rides, navigation, earnings dashboard, real-time location updates
+In-app chat với text messages, images, push notifications, typing indicator
+Push notification system với FCM, deep linking to specific screens, notification center",React Native; TypeScript; JavaScript; Redux; Firebase; RESTful API; WebSocket; Git; Agile,"React Native Certification - Udemy
+AWS Mobile Developer
+Top 5 Hackathon Grab 2024"
+CV102,Trần Thị Bảo,baott@gmail.com,902222222,https://github.com/baott,Backend Developer Intern,Đại học,Đại học Công Nghệ,Công nghệ thông tin,2025,3.6,Tiki,Backend Intern,07/2024,Present,"Thực tập 5+ tháng tại Tiki (ongoing)
+Develop RESTful APIs với Node.js và Express
+Database design với PostgreSQL, Redis caching
+Write unit tests với Jest, coverage 85%
+Code review và learn from senior developers
+Fix production bugs và optimize queries","Order Management API
+Product Recommendation
+Email Service",Backend Developer,"Node.js; Express; PostgreSQL; Redis; Docker
+Node.js; Collaborative Filtering; Redis
+Node.js; Nodemailer; Bull Queue; Templates","API quản lý orders với CRUD, state transitions, pagination, filtering, sorting
+Recommendation API với collaborative filtering algorithm, cache hot items in Redis
+Email service với templates, queue processing, retry logic, tracking",Node.js; Express; PostgreSQL; Redis; Docker; Jest; Git; RESTful API,"AWS Cloud Practitioner
+Completed Node.js course - Udemy
+Hackathon Tiki 2024 - Top 15"
+CV109,Bùi Minh Khoa,khoabm@gmail.com,909999999,,Thực tập sinh Marketing,Đại học,Đại học Kinh tế TPHCM,Marketing,2026,3.1,,,,,,"Social Media Content
+Facebook Ads Campaign",Intern,"Canva; Excel; Facebook
+Facebook Ads Manager; Analytics","Content calendar 2 tuần cho Facebook và Instagram
+Campaign Facebook Ads budget 5M, reach 40K, 300 clicks",Facebook; Instagram; Canva; Excel; Google Analytics cơ bản,"Tham gia CLB Marketing
+Google Digital Garage Certificate"
+CV106,Đỗ Thị Phương,phuongdt@gmail.com,906666666,https://github.com/phuongdt,Frontend Developer Intern,Đại học,Đại học Công Nghệ,Công nghệ thông tin,2025,3.5,Startup XYZ,Frontend Intern,09/2024,Present,"Thực tập 3+ tháng (ongoing)
+Develop UI với React và TypeScript
+Implement responsive design với Tailwind CSS
+Integrate APIs với Axios và React Query
+State management với Redux Toolkit
+Fix bugs và code reviews","E-commerce Website
+Admin Dashboard
+Portfolio Website",Frontend Developer,"React; TypeScript; Tailwind CSS; Redux Toolkit
+React; TypeScript; Charts.js; Data Tables
+Next.js; TypeScript; Framer Motion; SEO","E-commerce site với product listing, filters, cart, checkout flow, order tracking
+Dashboard với data tables, charts, filters, pagination, export functionality
+Portfolio với smooth animations, dark mode, responsive design, SEO optimized",React; TypeScript; JavaScript; HTML; CSS; Tailwind CSS; Redux; Next.js; Git,"React Advanced Certificate - Udemy
+TypeScript Fundamentals - Frontend Masters
+Hackathon 2024 - Top 20"
+CV112,Đặng Văn Nam,namdt@gmail.com,912222223,https://github.com/namdt; https://medium.com/@namdt,Data Analyst,Đại học,Đại học Kinh tế TPHCM,Kinh tế,2023,3.7,Tiki,Data Analyst,03/2023,Present,"Data Analyst tại Tiki với 2 năm kinh nghiệm
+Analyze user behavior, sales trends, marketing campaigns
+Create dashboards với Power BI và Tableau
+Write SQL queries để extract insights từ data warehouse
+A/B testing analysis và statistical significance testing
+Collaborate với Product và Marketing teams
+Present insights và recommendations to stakeholders","Sales Analytics Dashboard
+Customer Segmentation
+Marketing Campaign Analysis
+Cohort Retention Analysis",Data Analyst,"Power BI; SQL; Python; Data Modeling
+Python; K-means; RFM; Clustering
+SQL; Python; A/B Testing; Statistical Analysis
+SQL; Python; Cohort Analysis; Visualization","Dashboard theo dõi sales KPIs: revenue, orders, AOV, conversion rate với drill-down by category, region
+Segment customers into 6 groups based on RFM analysis, recommend targeted marketing strategies
+Analyze 20+ campaigns, calculate ROI, conversion rates, customer acquisition cost, provide recommendations
+Cohort analysis để track retention over time, identify churn patterns, improve retention strategies",SQL; Python; Power BI; Tableau; Excel; Pandas; NumPy; Statistics; A/B Testing,"Google Data Analytics Professional Certificate
+SQL for Data Analysis - Udacity
+Tableau Desktop Specialist
+Kaggle Competition - Silver Medal"
+CV104,Phạm Thị Dương,duongpt@gmail.com,904444444,https://behance.net/duongpt; https://dribbble.com/duongpt; https://duongpt.design,UI/UX Designer,Đại học,Đại học Mỹ Thuật TPHCM,Thiết kế đồ họa,2022,3.7,Sendo,Senior Product Designer,06/2022,Present,"Senior Designer tại Sendo với 3 năm kinh nghiệm
+Design UI/UX cho e-commerce app 3M+ users
+User research: interviews, surveys, usability testing với 50+ users
+Create design system với 150+ components trong Figma
+Collaborate với PM và Developers để launch features
+A/B testing designs để optimize conversion rate
+Improve checkout flow, increase conversion 20%
+Mentor 2 junior designers","Sendo App Redesign
+Seller Dashboard
+Marketing Campaign Landing Pages
+Design System",Lead Designer,"Figma; User Research; Prototyping; Usability Testing
+Figma; Data Visualization; Complex UI
+Figma; High-conversion Design; A/B Testing
+Figma; Component Library; Documentation","Complete redesign Sendo app UI/UX với modern design, dark mode, accessibility, 200+ screens
+Dashboard cho sellers với charts, analytics, inventory management, order processing
+10+ landing pages với conversion rate 8%, A/B tested headlines, CTAs, hero images
+Design system với typography, colors, spacing, 150+ components, comprehensive documentation",Figma; Sketch; Adobe XD; Photoshop; Illustrator; Prototyping; User Research; Usability Testing; HTML/CSS,"Awwwards Site of the Day 2023
+CSS Design Awards - Special Kudos
+Behance Featured Designer
+Speaker tại Vietnam Design Week 2024"
+CV119,Đỗ Thị Uyên,uyendt@gmail.com,919999990,,Nhân viên bán hàng,Trung cấp,Trung cấp Kinh tế,Kinh doanh,2023,2.65,Cửa hàng thời trang XYZ,Sales,09/2023,Present,"Bán quần áo thời trang tại cửa hàng
+Tư vấn phong cách cho khách hàng
+Đạt doanh số 60M/tháng
+Quản lý kho và sắp xếp hàng hóa",,,,,Giao tiếp; Bán hàng; Tư vấn thời trang; POS cơ bản,
+CV117,Mai Thị Trang,trangmt@gmail.com,917777778,,Nhân viên IT Support,Cao đẳng,Cao đẳng Công nghệ TPHCM,Công nghệ thông tin,2023,2.75,Công ty ABC,IT Support,07/2023,Present,"Hỗ trợ kỹ thuật cho 60 nhân viên
+Cài đặt và cấu hình máy tính, laptop, máy in
+Troubleshoot phần cứng và phần mềm
+Quản lý Active Directory, tài khoản email
+Network troubleshooting cơ bản",,,,,Windows; Active Directory; Networking; Hardware; Microsoft Office,"CompTIA A+
+CCNA (đang học)"
+CV328,Đặng Thị Lan,landtt@gmail.com,928901234,https://github.com/landtt; https://linkedin.com/in/landtt,Full-stack Developer Intern,Đại học,Đại học Bách Khoa TPHCM,Công nghệ thông tin,2025,3.8,VNG Corporation,Full-stack Intern,07/2024,01/2025,"Thực tập 6 tháng tại VNG (ongoing)
+Develop full-stack features với React và Node.js
+Implement authentication với JWT và OAuth2
+Database design với PostgreSQL
+Deploy lên AWS EC2 với Docker
+Write unit tests với Jest và React Testing Library
+Participate in code reviews và Agile ceremonies","Social Network Platform
+E-learning System
+Admin Dashboard
+API Gateway",Full-stack,"React; Node.js; PostgreSQL; Redis; AWS
+React; Node.js; Video Streaming; Quiz
+React; TypeScript; Charts; Export Excel
+Node.js; Express; JWT; Rate Limiting","Social platform với posts, comments, likes, follow, newsfeed algorithm, notifications
+E-learning với video courses, quizzes, progress tracking, certificates
+Dashboard quản lý users, courses, analytics với charts, filters, export
+API Gateway với auth middleware, rate limiting, logging, error handling",React; Node.js; TypeScript; PostgreSQL; MongoDB; Redis; Docker; AWS; Jest; Git; RESTful API; GraphQL,"AWS Certified Solutions Architect Associate
+Meta React Advanced Certificate
+Top 3 Hackathon VNG 2024
+GitHub: 800+ contributions
+Học bổng FPT 2023"
+CV316,Lương Văn Sơn,sonlv@gmail.com,916789012,,Thực tập sinh Kế toán,Đại học,Đại học Kinh tế TPHCM,Kế toán,2026,3.0,,,,,,"Financial Report Template
+Tax Calculator",Intern,"Excel; MISA
+Excel; VBA","Template báo cáo tài chính theo chuẩn VAS
+Bảng tính tự động tính thuế GTGT và TNDN với công thức Excel",Excel; Word; MISA; PowerPoint,"Tham gia CLB Kế toán
+Tình nguyện kế toán quỹ từ thiện"
+CV324,Phạm Thị Duyên,duyenpt@gmail.com,924567890,https://linkedin.com/in/duyenpt,Product Manager Intern,Đại học,Đại học Bách Khoa TPHCM,Quản trị kinh doanh,2025,3.7,Tiki,PM Intern,08/2024,Present,"Thực tập 5+ tháng tại Tiki (ongoing)
+Hỗ trợ PM quản lý 2 features
+Write user stories và acceptance criteria
+Conduct user interviews với 20+ users
+A/B testing và analyze results
+Track metrics: conversion rate, retention
+Collaborate với Engineering và Design teams","Product Recommendation Feature
+Loyalty Program Redesign",PM Intern,"SQL; Mixpanel; A/B Testing
+Figma; User Research; Gamification","Feature đề xuất sản phẩm tương tự, increase CTR 15%, define requirements, work with ML team
+Redesign loyalty program với points, badges, missions, increase engagement 10%",Product Management; SQL; Excel; Mixpanel; Google Analytics; A/B Testing; Figma; Jira; User Research,"Product Management Certificate - Reforge
+SQL for Product Managers - Udacity
+Completed PM Bootcamp Vietnam 2024"
+CV318,Phạm Văn Tùng,tungpv@gmail.com,918901234,,Nhân viên IT Support,Cao đẳng,Cao đẳng Công nghệ TPHCM,Công nghệ thông tin,2024,2.8,Công ty ABC,IT Support,08/2024,Present,"Hỗ trợ 80 nhân viên
+Cài đặt máy tính, máy in
+Sửa phần cứng cơ bản
+Quản lý Active Directory
+Backup dữ liệu",,,,,Windows; Networking; Hardware; Active Directory; Office,"CompTIA A+
+CCNA (đang học)"
+CV309,Bùi Minh Khoa,khoabm@gmail.com,909012345,,Thực tập sinh Nhân sự,Đại học,Đại học Lao động Xã hội,Quản trị nhân lực,2026,3.2,,,,,,"Recruitment Process Document
+Onboarding Checklist",HR Intern,"Excel; PowerPoint
+Word; PowerPoint","Tài liệu quy trình tuyển dụng từ post job đến onboard
+Checklist onboarding cho nhân viên mới với timeline 30-60-90 days",Excel; Word; PowerPoint; Google Forms,"Tham gia CLB Nhân sự
+Tình nguyện tổ chức Job Fair trường"
+CV310,Lý Văn Linh,linhlv@gmail.com,910123456,https://github.com/linhlv; https://linkedin.com/in/linhlv,Backend Developer Intern,Đại học,Đại học Bách Khoa TPHCM,Công nghệ thông tin,2025,3.7,Tiki,Backend Intern,08/2024,Present,"Thực tập 5+ tháng tại Tiki (ongoing)
+Develop backend services với Node.js và PostgreSQL
+Implement caching với Redis để tăng performance 40%
+Write unit tests với Jest, coverage 80%+
+Code review và mentor junior interns
+On-call để fix production bugs","Order Management API
+Product Search Service
+Payment Integration
+Notification Service",Backend Developer,"Node.js; Express; PostgreSQL; Redis; Docker
+Node.js; Elasticsearch; Microservices
+Node.js; Stripe; VNPay; Webhook
+Node.js; Firebase; Bull Queue","RESTful API quản lý orders với state machine, integration với shipping providers (GHN, GHTK)
+Search service với Elasticsearch, auto-complete, faceted search, pagination
+Tích hợp payment gateways với retry logic, webhook handling, transaction logging
+Service gửi notifications qua FCM, email, SMS với message queue Bull",Node.js; Express; PostgreSQL; MongoDB; Redis; Elasticsearch; Docker; Jest; Git; Microservices,"AWS Certified Developer Associate
+MongoDB University M121
+Top 10 Hackathon Tiki 2024
+Contributor Node.js open source"
+CV329,Trần Văn Khoa,khoatv@gmail.com,929012345,https://github.com/khoatv; https://linkedin.com/in/khoatv; https://khoatv.blog,Senior Software Engineer Intern,Đại học,Đại học Bách Khoa Hà Nội,Khoa học máy tính,2024,3.95,Grab,SWE Intern,01/2024,Present,"Thực tập 12+ tháng tại Grab (ongoing, có khả năng convert full-time)
+Develop critical backend services với Go xử lý 10K+ req/day
+Architect microservices với event-driven pattern
+Implement distributed tracing với Jaeger
+Database sharding và replication strategies
+Optimize queries giảm 60% response time
+Mentor 2 junior interns
+Lead technical design discussions
+On-call rotation 24/7","Ride Booking System
+Driver Matching Algorithm
+Real-time Tracking
+Pricing Engine
+Payment Orchestration",Tech Lead,"Go; PostgreSQL; Redis; Kafka; K8s; Microservices
+Go; Algorithm; Redis; Geospatial; Optimization
+Go; WebSocket; Redis; PostGIS; Real-time
+Go; Dynamic Pricing; ML; PostgreSQL
+Go; Distributed Transactions; Saga Pattern","Booking system với state machine, idempotency, distributed locks, handle 10K bookings/day
+Matching algorithm tối ưu distance và wait time, match 1000+ rides/hour với <500ms latency
+Real-time tracking 5000+ drivers với WebSocket, Redis pub/sub, location updates, map matching
+Dynamic pricing với surge algorithm, consider supply/demand, weather, events, A/B tested
+Orchestrate 3 payment gateways với saga pattern, retry logic, reconciliation, 99.9% success rate",Go; Node.js; Python; PostgreSQL; MongoDB; Redis; Kafka; Microservices; Kubernetes; Docker; GraphQL; WebSocket; AWS; GCP; System Design; Algorithms; Distributed Systems,"LeetCode: 1200+ problems solved, Contest Rating 2100, Top 1% globally
+AWS Certified Solutions Architect Professional
+Completed MIT 6.824 Distributed Systems
+ACM ICPC Asia Regional - Gold Medal 2023
+Google Code Jam - Round 3 (Top 500 globally)
+Published research paper at local CS conference
+GitHub: 2000+ contributions, 3 open-source projects with 500+ stars
+Học bổng Vallet toàn phần 4 năm"
+CV325,Võ Văn Đức,ducvv@gmail.com,925678901,,Thực tập sinh Logistics,Đại học,Đại học Giao thông Vận tải,Logistics,2026,3.1,Công ty Logistics XYZ,Logistics Intern,01/2025,04/2025,"Thực tập 3 tháng
+Học quy trình xuất nhập khẩu
+Theo dõi lịch trình vận chuyển
+Phối hợp warehouse và shipping
+Làm báo cáo Excel giao nhận",,,,,Excel; PowerPoint; Logistics cơ bản; Tiếng Anh,"Tham gia CLB Logistics
+Chứng chỉ Forwarder cơ bản"
+CV313,Phan Thị Oanh,oanhpt@gmail.com,913456789,https://github.com/oanhpt,Data Analyst Intern,Đại học,Đại học Kinh tế TPHCM,Kinh tế,2025,3.6,Công ty Phân tích ABC,Data Intern,02/2024,06/2024,"Thực tập 5 tháng
+Phân tích dữ liệu bán hàng với SQL và Python
+Tạo dashboard với Power BI
+Làm sạch dữ liệu với Pandas
+Present insights cho management","Sales Dashboard
+Customer Segmentation
+A/B Test Analysis",Data Analyst,"Power BI; SQL; Python
+Python; K-means; RFM Analysis
+Python; Statistics; T-test","Dashboard theo dõi sales, revenue, top products với drill-down by region, time
+Phân khách hàng thành 5 segments để target marketing
+Phân tích A/B test landing page, calculate statistical significance",Python; SQL; Power BI; Excel; Pandas; NumPy; Matplotlib; Statistics,"Google Data Analytics Certificate
+Python for Data Science - Coursera
+Kaggle Competition - Bronze Medal"
+CV301,Nguyễn Văn An,nguyenvanan@gmail.com,901234567,,Sinh viên tìm việc thực tập,Đại học,Đại học Công Nghệ,Công nghệ thông tin,2026,2.5,,,,,,"Todo App
+Calculator",Developer,"HTML; CSS; JavaScript
+Python","Todo list đơn giản với HTML/CSS/JavaScript, lưu localStorage
+Máy tính cơ bản với Python",HTML; CSS; JavaScript; Python; Git,
+CV305,Hoàng Văn Em,emhv@gmail.com,905678901,,Sinh viên năm 2 ngành Luật,Đại học,Đại học Luật TPHCM,Luật,2027,2.8,,,,,,,,,,,Tham gia CLB Sinh viên Luật
+CV317,Mai Thị Trang,trangmt@gmail.com,917890123,https://github.com/trangmt,DevOps Intern,Đại học,Đại học Bách Khoa TPHCM,Công nghệ thông tin,2025,3.5,Shopee,DevOps Intern,09/2024,Present,"Thực tập 4+ tháng tại Shopee (ongoing)
+Setup CI/CD pipelines với GitLab CI
+Deploy applications lên Kubernetes
+Monitoring với Prometheus và Grafana
+Infrastructure as Code với Terraform
+On-call support","CI/CD Pipeline
+Monitoring Dashboard
+Terraform Modules",DevOps Engineer,"GitLab CI; Docker; Kubernetes; Helm
+Prometheus; Grafana; Alerting
+Terraform; AWS; EC2; S3; RDS","Automate deployment với GitLab CI, run tests, build Docker image, deploy to K8s
+Dashboard monitor 20+ services với custom metrics, alerts qua Slack
+Terraform modules để provision AWS resources: VPC, EC2, RDS, S3",Docker; Kubernetes; Terraform; GitLab CI; AWS; Prometheus; Grafana; Linux; Bash; Python,"AWS Cloud Practitioner
+CKA - Certified Kubernetes Administrator (in progress)
+HashiCorp Terraform Associate"
+CV306,Đỗ Thị Phương,phuongdt@gmail.com,906789012,https://github.com/phuongdt; https://phuongdt.dev,Junior Frontend Developer,Đại học,Đại học Công Nghệ,Công nghệ thông tin,2025,3.4,Startup Tech XYZ,Frontend Intern,06/2024,10/2024,"Thực tập 4 tháng tại startup công nghệ
+Làm UI components với React và Tailwind CSS
+Responsive design cho mobile và tablet
+Integrate APIs từ backend với Axios
+Fix bugs và optimize performance với React DevTools","Portfolio Website
+Todo App
+Weather Dashboard
+Restaurant Menu",Frontend Developer,"React; Tailwind CSS; JavaScript
+React Hooks; LocalStorage
+React; API; Charts.js
+HTML; CSS; Bootstrap","Website portfolio responsive với dark mode, smooth animations, contact form với EmailJS
+Todo list với CRUD, filter by status, search, drag-and-drop reordering
+Dashboard hiển thị thời tiết 7 ngày với charts, location search với Geolocation API
+Menu nhà hàng với categories, cart, order form, print receipt",React; JavaScript; HTML; CSS; Tailwind CSS; Bootstrap; Git; Figma,"React Developer Certificate - Udemy
+Responsive Web Design - freeCodeCamp
+Hackathon HCMC 2024 - Top 15"
+CV314,Võ Văn Phúc,phucvv@gmail.com,914567890,,Nhân viên Sale,Đại học,Đại học Ngoại thương,Kinh doanh quốc tế,2023,3.3,Công ty Phần mềm ABC,Sales Executive,08/2023,Present,"Bán phần mềm CRM cho SMEs
+Cold calling 30+ leads/tuần, conversion 8%
+Demo sản phẩm cho clients
+Đạt 100% quota mỗi quý
+Close deals 500M-1B/năm","Sales Pitch Deck
+Demo Video",Sales,"PowerPoint; Video Editing
+Camtasia; OBS","Slide deck giới thiệu sản phẩm với case studies, ROI calculator
+Video demo 10 phút về features và benefits của CRM",B2B Sales; Presentation; Negotiation; Salesforce; Excel; PowerPoint,"Salesforce Sales Rep Certificate
+Top New Salesperson Q2/2024"
+CV312,Đặng Văn Nam,namdt@gmail.com,912345678,https://medium.com/@namdt; https://namdt.blog,Content Writer Intern,Đại học,Đại học Khoa học Xã hội Nhân văn,Báo chí,2025,3.5,Công ty Truyền thông XYZ,Content Intern,09/2024,Present,"Thực tập 4+ tháng (ongoing)
+Viết 50+ articles về công nghệ, review sản phẩm
+SEO optimization cho articles, tăng 80% organic traffic
+Keyword research với Ahrefs
+Edit và proofread content từ team
+Quản lý editorial calendar","Tech Blog Articles
+SEO Landing Pages
+Social Media Content",Content Writer,"WordPress; SEO; Google Analytics
+HTML; CSS; Yoast SEO
+Canva; Instagram; TikTok","50+ bài viết về AI, blockchain, fintech đạt 100K+ views tổng
+10 landing pages với conversion rate 5%, A/B testing headlines
+Content calendar 1 tháng cho Instagram và TikTok với 30+ posts",Content Writing; SEO; WordPress; Canva; Google Analytics; Social Media; Copywriting,"Google Analytics Certificate
+HubSpot Content Marketing
+SEO Fundamentals - Coursera"
+CV323,Nguyễn Văn Cường,cuongnv@gmail.com,923456789,,Nhân viên Logistics,Trung cấp,Trung cấp Kinh tế,Logistics,2024,2.6,Công ty Vận tải ABC,Warehouse Staff,06/2024,Present,"Quản lý kho 300m2
+Nhập xuất hàng
+Kiểm kê hàng tháng
+Sử dụng WMS cơ bản
+Phối hợp giao hàng",,,,,Quản lý kho; WMS; Excel; Forklift,"Chứng chỉ An toàn lao động
+Bằng lái xe nâng"
+CV302,Trần Thị Bình,tranthibinh@gmail.com,902345678,https://github.com/binhtt,Tìm kiếm vị trí Intern Backend,Đại học,Đại học Bách Khoa TPHCM,Khoa học máy tính,2025,3.5,FPT Software,Backend Intern,01/2024,04/2024,"Thực tập 3 tháng tại FPT Software
+Học về Spring Boot và RESTful API
+Làm việc nhóm 5 người với Agile/Scrum
+Code review và daily standup meeting
+Fix bugs và viết unit tests","Library Management System
+Weather API Service
+Student Portal",Backend Developer,"Java; Spring Boot; MySQL; Docker
+Java; RESTful API; JSON
+Java; Spring Boot; JWT; PostgreSQL","Hệ thống quản lý thư viện với CRUD operations, JWT authentication, role-based authorization
+RESTful API lấy dữ liệu thời tiết từ OpenWeather, caching với Redis để giảm API calls
+Portal sinh viên với đăng ký môn học, xem điểm, schedule với calendar view",Java; Spring Boot; MySQL; PostgreSQL; Docker; Git; RESTful API; Postman,"Chứng chỉ Java Programming - Coursera
+AWS Cloud Practitioner
+Tham gia CLB Lập trình FPT
+Hackathon FPT 2024 - Top 20"
+CV303,Lê Minh Cường,cuonglm@gmail.com,903456789,https://github.com/cuonglm; https://linkedin.com/in/cuonglm,Full-stack Developer Intern,Đại học,Đại học Quốc Gia Hà Nội,Công nghệ thông tin,2025,3.8,"VNG Corporation
+Zalo Team",Software Engineer Intern,06/2024,12/2024,"Thực tập 6 tháng tại VNG - Zalo Team
+Develop features cho Zalo Mini App platform
+Implement RESTful APIs với Node.js và Express
+Database design với PostgreSQL và Redis caching
+Write unit tests với Jest và integration tests
+Code review và pair programming với senior developers
+Participate in Agile ceremonies","E-commerce Mini App
+Chat Application
+Admin Dashboard
+API Gateway",Full-stack Developer,"Node.js; React; PostgreSQL; Redis; Docker
+Node.js; Socket.io; MongoDB; React
+React; TypeScript; Ant Design; Charts
+Node.js; Express; JWT; Rate Limiting","Mini app bán hàng trên Zalo với product catalog, cart, payment integration VNPay/Momo, order management
+Real-time chat với Socket.io, typing indicator, read receipts, image upload với Cloudinary
+Dashboard quản lý users, products, orders với charts, export Excel, email notifications
+API Gateway với authentication, rate limiting, request logging, error handling middleware",Node.js; React; TypeScript; PostgreSQL; MongoDB; Redis; Docker; Socket.io; Git; Agile; RESTful API; JWT,"Google Cloud Associate Cloud Engineer
+Meta React Developer Certificate
+Top 5 Hackathon VNG 2024
+GitHub: 500+ contributions
+Học bổng Vallet 2023"
+CV326,Hoàng Thị Giang,gianghi@gmail.com,926789012,https://github.com/gianghi,Mobile Developer Intern,Đại học,Đại học Công Nghệ,Công nghệ thông tin,2025,3.5,Startup Mobile ABC,Mobile Intern,08/2024,12/2024,"Thực tập 4 tháng
+Develop mobile app với React Native
+Implement features theo design
+Call APIs với Axios
+Fix bugs và optimize
+Collaborate với Backend team","News App
+Chat App
+E-commerce App",Mobile Developer,"React Native; Firebase; Redux
+React Native; Socket.io; Push Notifications
+React Native; Payment; Maps","News app với categories, search, bookmark, offline reading, share
+Chat app với real-time messaging, image upload, push notifications
+E-commerce với products, cart, checkout, order tracking",React Native; JavaScript; Redux; Firebase; RESTful API; Git; Agile,"React Native Certification - Udemy
+Hackathon Mobile 2024 - Top 10"
+CV304,Phạm Thị Dung,dungpt@gmail.com,904567890,,Nhân viên Marketing,Cao đẳng,Cao đẳng Kinh tế TPHCM,Marketing,2024,3.0,Công ty TNHH ABC,Marketing Assistant,03/2023,12/2023,"Hỗ trợ viết content cho Facebook fanpage 50K followers
+Chạy quảng cáo Facebook Ads với budget 10M/tháng
+Thiết kế banner với Canva
+Tương tác với khách hàng qua inbox và comments
+Báo cáo KPI hàng tuần: reach, engagement, conversions",,,,,Facebook Ads; Instagram; Canva; Excel; PowerPoint; Google Analytics,"Chứng chỉ Facebook Blueprint
+Google Digital Marketing Certificate
+Tham gia CLB Marketing"
+CV322,Lê Thị Bích,bichle@gmail.com,922345678,https://behance.net/bichle; https://dribbble.com/bichle; https://bichle.design,UI/UX Designer,Đại học,Đại học Mỹ Thuật TPHCM,Thiết kế đồ họa,2024,3.7,Công ty Thiết kế DEF,UI/UX Designer,07/2024,Present,"Thực tập 6+ tháng (ongoing)
+Thiết kế UI cho 5 projects
+User research với 30+ users
+Wireframes, mockups, prototypes với Figma
+Collaborate với developers
+Maintain design system 60+ components","E-commerce App
+Banking App
+Fitness App
+Food Delivery",UI/UX Designer,"Figma; Mobile; Prototyping; Research
+Figma; Finance; Accessibility
+Figma; Health; Gamification
+Figma; Maps; Real-time Tracking","E-commerce với product grid, filters, cart, checkout, payment, order tracking
+Banking app với dashboard, transfer money, bills, transaction history, security features
+Fitness app với workout plans, progress tracking, social features, achievements
+Food delivery với restaurant listing, menu, cart, order tracking on map",Figma; Adobe XD; Photoshop; Illustrator; Sketch; Prototyping; User Research; HTML/CSS,"Awwwards Honorable Mention 2024
+Behance Featured Project x2
+Interaction Design - Coursera
+Finalist Young Designer Awards 2024"
+CV327,Lý Văn Hùng,hunglv@gmail.com,927890123,,Marketing Intern,Đại học,Đại học Kinh tế TPHCM,Marketing,2026,2.9,,,,,,"Social Media Plan
+Facebook Ads Campaign",Intern,"Excel; Canva; Facebook
+Facebook Ads; Analytics","Content plan 1 tháng cho Instagram với 30 posts
+Facebook Ads campaign budget 3M, đạt 30K impressions, 500 clicks",Facebook; Instagram; Canva; Excel; Google Analytics,"Tham gia CLB Marketing
+Google Digital Garage Certificate"
+CV319,Nguyễn Thị Uyên,uyennt@gmail.com,919012345,https://github.com/uyennt,QA Engineer Intern,Đại học,Đại học Bách Khoa Hà Nội,Công nghệ thông tin,2025,3.6,VNG Corporation,QA Intern,10/2024,Present,"Thực tập 3+ tháng (ongoing)
+Manual testing cho web và mobile apps
+Write test cases và test plans
+API testing với Postman
+Automation testing với Selenium (learning)
+Bug tracking với Jira","Test Automation Framework
+API Test Suite",QA Engineer,"Selenium; Python; Page Object Model
+Postman; Newman; API automation","Framework automation test cho web app với Selenium, 100+ test cases, HTML reports
+Automation suite cho 50+ APIs với Postman collections, environment variables",Selenium; Postman; Jira; TestRail; SQL; Python; Manual Testing; API Testing; Git,"ISTQB Foundation Level
+Software Testing Fundamentals - Coursera"
+CV330,Nguyễn Thị Mai,maint@gmail.com,930123456,,Telesales,Cao đẳng,Cao đẳng Kinh tế,Kinh doanh,2024,2.7,Công ty Bảo hiểm ABC,Telesales,10/2024,Present,"Telesales bảo hiểm nhân thọ
+Tư vấn qua điện thoại
+Đạt 75% KPI
+Chăm sóc khách hàng",,,,,Kỹ năng gọi điện; Tư vấn; CRM cơ bản,"Chứng chỉ Tư vấn Bảo hiểm
+Top Telesales Q4/2024"
+CV321,Đỗ Văn Việt,vietdv@gmail.com,921234567,https://github.com/vietdv; https://leetcode.com/vietdv; https://vietdv.dev,Software Engineer Intern,Đại học,Đại học Bách Khoa Hà Nội,Khoa học máy tính,2025,3.9,"Grab
+Shopee",SWE Intern,06/2024,01/2025,"Thực tập 7 tháng tại Grab (ongoing từ 06/2024)
+Develop backend services với Go và PostgreSQL
+Implement event-driven với Kafka
+Build RESTful APIs và GraphQL APIs
+Database optimization: indexing, query tuning
+Write comprehensive unit và integration tests
+Code review và collaborate với 5-person team","Ride Booking API
+Real-time Tracking
+Payment Service
+Notification Service",Backend Engineer,"Go; PostgreSQL; Redis; Kafka; Microservices
+Go; WebSocket; Redis; PostGIS
+Go; Stripe API; State Machine
+Go; FCM; Email; SMS; Queue","API booking rides với state machine, handle 1K requests/hour, integration tests 90% coverage
+Real-time tracking 500+ drivers với WebSocket, Redis pub/sub, location updates every 5s
+Payment orchestration với Stripe, retry logic, idempotency keys, webhook verification
+Send push/email/SMS notifications với Bull queue, deduplication, rate limiting",Go; Node.js; PostgreSQL; Redis; Kafka; Microservices; GraphQL; WebSocket; Docker; Git; System Design,"LeetCode: 500+ problems, Contest Rating 1800
+AWS Certified Solutions Architect Associate
+ACM ICPC Vietnam Regional - Bronze Medal 2024
+GitHub: 1000+ contributions
+Học bổng VinIF 2023"
+CV308,Vũ Thị Hằng,hangvt@gmail.com,908901234,https://github.com/hangvt; https://behance.net/hangvt,UI/UX Designer Intern,Đại học,Đại học Mỹ Thuật TPHCM,Thiết kế đồ họa,2025,3.6,Công ty Thiết kế ABC,UI/UX Intern,07/2024,11/2024,"Thực tập 4 tháng tại agency thiết kế
+Thiết kế UI cho mobile app và landing pages
+Tạo wireframes và prototypes với Figma
+User research với 15+ users
+Collaborate với developers để handoff designs","E-commerce Mobile App
+Food Delivery App
+Banking App Redesign",UI/UX Designer,"Figma; Mobile UI; Prototyping
+Figma; UX Research
+Figma; High-fidelity Mockups","Mobile app bán hàng với product listing, filters, cart, checkout, order tracking
+Food delivery app với restaurant list, menu, real-time order tracking on map
+Redesign banking app với modern UI, improve UX flow cho chuyển tiền",Figma; Adobe XD; Photoshop; Illustrator; Sketch; Wireframing; Prototyping; User Research,"Interaction Design Specialization - Coursera
+Behance Featured Project 2024
+Finalist - Young Designer Contest 2024"
+CV311,Trịnh Thị Mai,maitrtt@gmail.com,911234567,,Nhân viên bán hàng,Trung cấp,Trung cấp Kinh tế,Kinh doanh,2024,2.7,Cửa hàng điện thoại Mobile World,Sales,06/2024,Present,"Bán điện thoại và phụ kiện
+Tư vấn sản phẩm cho khách hàng
+Đạt doanh số 80M/tháng
+Xử lý khiếu nại",,,,,Giao tiếp; Tư vấn; Bán hàng; MS Office cơ bản,
+CV315,Hoàng Thị Quỳnh,quynhht@gmail.com,915678901,https://github.com/quynhht; https://kaggle.com/quynhht,Machine Learning Intern,Đại học,Đại học Bách Khoa Hà Nội,Khoa học máy tính,2025,3.8,VinAI Research,ML Intern,07/2024,12/2024,"Thực tập 6 tháng tại VinAI
+Research computer vision với PyTorch
+Train image classification models, 92% accuracy
+Data preprocessing và augmentation
+Write research report và present findings","Image Classification
+Object Detection
+Sentiment Analysis",ML Engineer,"Python; PyTorch; CNN; Transfer Learning
+Python; YOLO; OpenCV
+Python; NLP; BERT; Transformers","Model phân loại 100 categories với ResNet50, fine-tuning, data augmentation, 92% accuracy
+Detect objects trong ảnh với YOLOv8, bounding boxes, confidence scores
+Phân tích sentiment tiếng Việt với PhoBERT, 85% accuracy trên test set",Python; PyTorch; TensorFlow; Scikit-learn; Pandas; NumPy; Jupyter; OpenCV; Git,"Published paper at local AI conference
+Kaggle Competition - Silver Medal
+Deep Learning Specialization - Coursera
+Top 10 AI Hackathon VinAI 2024"
+CV320,Trần Văn An,antv@gmail.com,920123456,,Nhân viên Chăm sóc khách hàng,Cao đẳng,Cao đẳng Du lịch,Quản trị khách sạn,2024,2.9,Công ty Du lịch XYZ,Customer Service,03/2024,Present,"Trả lời hotline và email
+Giải đáp thắc mắc về tour
+Xử lý khiếu nại
+Booking tour qua hệ thống
+CSAT 4.3/5.0",,,,,Giao tiếp; Xử lý tình huống; CRM; Excel; Tiếng Anh giao tiếp,"Customer Service Excellence
+Nhân viên xuất sắc Q3/2024"
+CV307,Ngô Văn Giang,giangvn@gmail.com,907890123,,Nhân viên Kế toán,Đại học,Đại học Kinh tế Quốc dân,Kế toán,2023,3.4,Công ty TNHH DEF,Kế toán viên,01/2024,Present,"Kế toán tổng hợp cho công ty 30 nhân viên
+Lập báo cáo tài chính hàng tháng
+Sử dụng MISA để quản lý sổ sách
+Đối chiếu công nợ với khách hàng
+Kê khai thuế GTGT và TNDN",,,,,Excel; MISA; Word; PowerPoint; Kế toán,"Chứng chỉ Kế toán trưởng
+Tham gia khóa Thuế 2024"

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🤖 Bộ Não AI Đọc CV (V8)</title>
+    <title> Bộ Não AI Đọc CV (V8)</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f7f6; display: flex; flex-direction: column; align-items: center; min-height: 100vh; color: #333; padding: 1rem 0; }
         .container { background: #fff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.07); width: 90%; max-width: 800px; padding: 2rem; margin-bottom: 2rem; }
@@ -107,7 +107,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🤖 Bộ Não AI Đọc CV (V8)</h1>
+        <h1> Bộ Não AI Đọc CV (V8)</h1>
         <p class="subtitle">Upload CV để AI phân tích và chấm điểm</p>
 
         <div id="connection-status" style="padding: 10px; margin-bottom: 1rem; border-radius: 5px; font-size: 0.9em; text-align: center;">
@@ -291,7 +291,7 @@
             let htmlContent = '';
 
             // --- PHẦN 1: BẢNG CHẤM ĐIỂM (THE BRAIN) ---
-            htmlContent += '<h3>📊 KẾT QUẢ CHẤM ĐIỂM (THE BRAIN)</h3>';
+            htmlContent += '<h3> KẾT QUẢ CHẤM ĐIỂM (THE BRAIN)</h3>';
 
             // 1a. Bảng tóm tắt
             const gradeClass = getGradeClass(scoring.final_score);
@@ -424,14 +424,14 @@
         // === Hàm phụ trợ (Cập nhật) ===
         function formatTitle(key) {
              const titles = {
-                email: '📧 Email', phone: '📱 Phone', links: '🔗 Links', gpa: '🎓 GPA/CGPA',
-                objective: '🎯 MỤC TIÊU (OBJECTIVE)', education: '🎓 HỌC VẤN (EDUCATION)',
-                experience: '💼 KINH NGHIỆM / THỰC TẬP (EXPERIENCE/INTERNSHIP)',
-                projects: '🚀 DỰ ÁN (PROJECTS)', skills: '🛠️ KỸ NĂNG (SKILLS)',
-                activities: '🎭 HOẠT ĐỘNG (ACTIVITIES)',
-                certificates: '📜 CHỨNG CHỈ (CERTIFICATES)',
-                awards: '🏆 GIẢI THƯỞNG / DANH HIỆU (AWARDS)',
-                info: 'ℹ️ THÔNG TIN KHÁC'
+                email: ' Email', phone: ' Phone', links: ' Links', gpa: ' GPA/CGPA',
+                objective: ' MỤC TIÊU (OBJECTIVE)', education: ' HỌC VẤN (EDUCATION)',
+                experience: ' KINH NGHIỆM / THỰC TẬP (EXPERIENCE/INTERNSHIP)',
+                projects: ' DỰ ÁN (PROJECTS)', skills: ' KỸ NĂNG (SKILLS)',
+                activities: ' HOẠT ĐỘNG (ACTIVITIES)',
+                certificates: ' CHỨNG CHỈ (CERTIFICATES)',
+                awards: ' GIẢI THƯỞNG / DANH HIỆU (AWARDS)',
+                info: 'ℹ THÔNG TIN KHÁC'
              };
              return titles[key] || key.toUpperCase();
         }
@@ -444,10 +444,10 @@
         }
 
         function getGradeText(score) {
-            if (score >= 85) return 'XUẤT SẮC 🌟'; //
-            if (score >= 70) return 'TỐT ✅'; //
-            if (score >= 55) return 'KHÁ 👍'; //
-            if (score >= 40) return 'TRUNG BÌNH ⚠️'; //
+            if (score >= 85) return 'XUẤT SẮC '; //
+            if (score >= 70) return 'TỐT '; //
+            if (score >= 55) return 'KHÁ '; //
+            if (score >= 40) return 'TRUNG BÌNH '; //
             return 'YẾU ❌'; //
         }
 

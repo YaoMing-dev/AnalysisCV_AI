@@ -209,6 +209,13 @@ class CVScoringRules:
         'Healthcare': ['healthcare', 'medical', 'doctor', 'physician', 'nurse', 'nursing', 'clinical',
                       'patient care', 'hospital', 'health', 'medicine', 'registered nurse', 'rn', 'md',
                       'pharmacist', 'dentist', 'therapy', 'medical license'],
+        # BỔ SUNG 2 NGÀNH: LOGISTICS và TÂM LÝ HỌC
+        'Logistics': ['logistics', 'supply chain', 'warehouse', 'shipping', 'freight', 'transportation',
+                     'delivery', 'distribution', 'import', 'export', 'customs', 'procurement',
+                     'inventory management', 'fleet', 'trucking', '3pl', 'courier', 'fulfillment'],
+        'Psychology': ['psychology', 'psychologist', 'counseling', 'counselor', 'therapist', 'therapy',
+                      'mental health', 'clinical psychology', 'psychiatry', 'social work', 'behavioral',
+                      'cognitive', 'psychotherapy', 'counselling', 'mental wellness', 'psychiatric'],
     }
 
     @staticmethod
@@ -430,14 +437,14 @@ class CVScoringRules:
     @staticmethod
     def score_projects(project_name, project_description, project_technologies):
         """
-        Chấm điểm dự án: 0-35 điểm
+        Chấm điểm dự án: 0-35 điểm (CHẶT CHẼ HƠN)
         - Số lượng dự án: 0-10 điểm
         - Chất lượng mô tả: 0-10 điểm
         - Công nghệ sử dụng: 0-15 điểm
         """
         score = 0
 
-        # 1. ĐẾM SỐ LƯỢNG DỰ ÁN THỰC TẾ (không chỉ xem length)
+        # 1. ĐẾM SỐ LƯỢNG DỰ ÁN THỰC TẾ (CHẶT CHẼ HƠN)
         project_count = 0
 
         # Detect từ project_name
@@ -452,36 +459,36 @@ class CVScoringRules:
             else:
                 project_count = 1
 
-        # Detect từ project_description (nếu có nhiều đoạn)
+        # Detect từ project_description (GIẢM ESTIMATION)
         if not pd.isna(project_description):
             desc_text = str(project_description)
-            # Heuristic: mỗi 300-500 ký tự ~ 1 dự án có mô tả đầy đủ
-            estimated_from_desc = max(1, len(desc_text) // 400)
+            # CHẶT CHẼ HƠN: mỗi 500-600 ký tự ~ 1 dự án (tăng từ 400)
+            estimated_from_desc = max(1, len(desc_text) // 550)
             project_count = max(project_count, estimated_from_desc)
 
-        # Điểm theo số lượng dự án
+        # Điểm theo số lượng dự án (GIẢM ĐIỂM)
         if project_count >= 5:
-            score += 10
+            score += 9  # Giảm từ 10
         elif project_count >= 3:
-            score += 8
+            score += 7  # Giảm từ 8
         elif project_count >= 2:
-            score += 6
+            score += 5  # Giảm từ 6
         elif project_count >= 1:
-            score += 4
+            score += 3  # Giảm từ 4
 
-        # 2. Chất lượng mô tả dự án
+        # 2. Chất lượng mô tả dự án (GIẢM ĐIỂM)
         if not pd.isna(project_description):
             desc_len = len(str(project_description))
-            if desc_len > 800:  # Nhiều dự án mô tả chi tiết
-                score += 10
-            elif desc_len > 500:
-                score += 8
-            elif desc_len > 300:
-                score += 6
-            elif desc_len > 150:
-                score += 4
+            if desc_len > 1000:  # Tăng threshold, giảm điểm
+                score += 9  # Giảm từ 10
+            elif desc_len > 700:  # Tăng threshold
+                score += 7  # Giảm từ 8
+            elif desc_len > 400:  # Tăng threshold
+                score += 5  # Giảm từ 6
+            elif desc_len > 200:  # Tăng threshold
+                score += 3  # Giảm từ 4
 
-        # 3. Công nghệ sử dụng (quan trọng nhất)
+        # 3. Công nghệ sử dụng (CHẶT CHẼ HƠN)
         if not pd.isna(project_technologies):
             tech_str = str(project_technologies).lower()
 
@@ -490,7 +497,7 @@ class CVScoringRules:
                           'github actions', 'gitlab ci', 'aws', 'azure', 'gcp', 'cloud',
                           'redis', 'kafka', 'websocket', 'graphql', 'oauth', 'jwt', 'firebase']
             modern_count = sum(1 for tech in modern_tech if tech in tech_str)
-            score += min(modern_count * 2, 8)  # Tối đa +8
+            score += min(modern_count * 1.5, 7)  # GIẢM từ *2, max 8 → *1.5, max 7
 
             # Fullstack bonus (frontend + backend + database)
             has_frontend = any(x in tech_str for x in ['react', 'vue', 'angular', 'frontend', 'tailwind'])
@@ -498,13 +505,13 @@ class CVScoringRules:
             has_database = any(x in tech_str for x in ['mongodb', 'mysql', 'postgresql', 'sql', 'database', 'firestore', 'sqlite'])
 
             if has_frontend and has_backend and has_database:
-                score += 5  # Fullstack engineer
+                score += 4  # GIẢM từ 5
 
-            # Số lượng công nghệ đa dạng
+            # Số lượng công nghệ đa dạng (CHẶT CHẼ HƠN)
             tech_count = len(tech_str.split(';')) if ';' in tech_str else len(tech_str.split(','))
-            if tech_count >= 6:
+            if tech_count >= 8:  # Tăng threshold
                 score += 2
-            elif tech_count >= 4:
+            elif tech_count >= 5:  # Tăng threshold
                 score += 1
 
         return min(score, 35)
@@ -618,17 +625,19 @@ class CVScoringRules:
 
         scholarship_keywords = [
             'học bổng', 'scholarship', 'grant', 'fellowship',
-            'sponsored', 'merit-based', 'need-based'
+            'sponsored', 'merit-based', 'need-based', 
+            'full-term scholarship', '50% scholarship', 'toàn phần'
         ]
 
         scholarship_count = sum(all_text.count(kw) for kw in scholarship_keywords)
-
+        
+        # TĂNG GIÁ TRỊ scholarships (quan trọng cho sinh viên)
         if scholarship_count >= 3:
             score += 8
         elif scholarship_count >= 2:
-            score += 6
+            score += 7  # TĂNG từ 6 → 7
         elif scholarship_count >= 1:
-            score += 4
+            score += 5  # TĂNG từ 4 → 5
 
         return min(score, 8)
 
@@ -796,32 +805,32 @@ class CVScoringRules:
         red_flag_penalty = 0
 
         if industry in ['IT/Software', 'Data/AI', 'Security', 'QA/Testing']:
-            # Tech industries: Projects + Skills + GitHub (ƯU TIÊN CAO)
-            if scores['projects'] >= 25:
-                industry_bonus += 15  # Tăng từ 8 → 15
-            elif scores['projects'] >= 20:
-                industry_bonus += 10
-            elif scores['projects'] >= 15:
-                industry_bonus += 6
+            # Tech industries: Projects + Skills + GitHub (ĐIỀU CHỈNH CHẶT CHẼ HƠN)
+            if scores['projects'] >= 28:  # Tăng threshold
+                industry_bonus += 12  # GIẢM từ 15
+            elif scores['projects'] >= 23:  # Tăng threshold
+                industry_bonus += 8  # GIẢM từ 10
+            elif scores['projects'] >= 18:  # Tăng threshold
+                industry_bonus += 5  # GIẢM từ 6
             
-            if scores['skills'] >= 15:
-                industry_bonus += 8  # Tăng từ 5 → 8
-            elif scores['skills'] >= 10:
-                industry_bonus += 5
+            if scores['skills'] >= 16:  # Tăng threshold
+                industry_bonus += 6  # GIẢM từ 8
+            elif scores['skills'] >= 12:  # Tăng threshold
+                industry_bonus += 4  # GIẢM từ 5
             
             if scores['links'] >= 5:  # GitHub
-                industry_bonus += 6  # Tăng từ 4 → 6
+                industry_bonus += 5  # GIẢM từ 6
             
             if scores['certificates'] >= 10:  # Tech certs
                 industry_bonus += 3
             
-            industry_bonus += achievement_score * 0.8  # Tăng từ 0.5 → 0.8
+            industry_bonus += achievement_score * 0.6  # GIẢM từ 0.8 → 0.6
             
             # RED FLAG: Mid+ không có GitHub
             links_text = str(row.get('links', '')).lower()
-            if seniority in ['Mid', 'Senior']:
+            if seniority in ['Mid', 'Senior', 'Lead']:  # Thêm Lead
                 if 'github' not in links_text and 'gitlab' not in links_text:
-                    red_flag_penalty += 10
+                    red_flag_penalty += 12  # TĂNG từ 10 → 12
 
         elif industry in ['Sales', 'Marketing']:
             # Sales/Marketing: Experience + Achievements (CRITICAL)
@@ -1015,20 +1024,49 @@ class CVScoringRules:
             if any(metric in job_desc for metric in ['csat', 'nps', 'satisfaction', 'customer rating']):
                 industry_bonus += 8
         
-        # 9. NGÀNH MỚI - Operations/Logistics
+        # 9. NGÀNH MỚI - Operations/Logistics (TĂNG CƯỜNG BONUS)
         elif industry == 'Operations':
             certs_text = str(row.get('certificates', '') or row.get('activity_certificate', '')).lower()
+            skills_text = str(row.get('skills_list', '')).lower()
             job_desc = str(row.get('job_description', '')).lower()
+            project_desc = str(row.get('project_description', '')).lower()
             
-            # Certificates (Six Sigma, APICS, Lean)
-            ops_certs = ['six sigma', 'lean', 'apics', 'cpim', 'cscp', 'green belt', 'black belt']
+            # ENGLISH PROFICIENCY quan trọng cho Operations
+            if 'ielts 7' in certs_text or 'ielts 7' in skills_text:
+                industry_bonus += 15  # IELTS 7.0+ là XUẤT SẮC
+            elif 'ielts 6' in certs_text or 'ielts 6' in skills_text:
+                industry_bonus += 10
+            elif any(kw in certs_text or kw in skills_text for kw in ['toeic 850', 'toeic 900']):
+                industry_bonus += 12
+            elif any(kw in certs_text or kw in skills_text for kw in ['ielts', 'toeic', 'english']):
+                industry_bonus += 5
+            
+            # REAL OPERATIONS/SUPPLY CHAIN PROJECTS
+            ops_keywords = ['supply chain', 'inventory', 'warehouse', 'logistics', 'operations',
+                           'optimization', 'procurement', 'shipping', 'export', 'import', 
+                           'incoterms', 'simulation']
+            real_ops_count = sum(1 for kw in ops_keywords if kw in project_desc)
+            if real_ops_count >= 5:
+                industry_bonus += 15
+            elif real_ops_count >= 3:
+                industry_bonus += 10
+            elif real_ops_count >= 1:
+                industry_bonus += 5
+            
+            # Certificates (Six Sigma, APICS, Lean, Simulation)
+            ops_certs = ['six sigma', 'lean', 'apics', 'cpim', 'cscp', 'green belt', 'black belt',
+                        'fresh connection', 'simulation', 'inchainge', 'service-learning']
             ops_cert_count = sum(1 for cert in ops_certs if cert in certs_text)
-            industry_bonus += ops_cert_count * 5  # +5đ mỗi ops cert
+            industry_bonus += ops_cert_count * 6  # TĂNG từ 5 → 6
             
             # Process improvement keywords
-            process_keywords = ['optimize', 'improve', 'reduce cost', 'efficiency', 'productivity']
+            process_keywords = ['optimize', 'improve', 'reduce cost', 'efficiency', 'productivity', 'roi']
             if any(kw in job_desc for kw in process_keywords):
                 industry_bonus += 8
+            
+            # Experience (kể cả part-time teaching/tutoring)
+            if scores['experience'] >= 8:
+                industry_bonus += 5
         
         # 10. NGÀNH MỚI - Legal/Compliance
         elif industry == 'Legal':
@@ -1064,8 +1102,90 @@ class CVScoringRules:
             # Education CRITICAL (Master/PhD for doctors)
             if scores['education'] >= 9:  # Master/PhD
                 industry_bonus += 15
+        
+        # 12. NGÀNH MỚI - Logistics (TĂNG CƯỜNG BONUS)
+        elif industry == 'Logistics':
+            certs_text = str(row.get('certificates', '') or row.get('activity_certificate', '')).lower()
+            skills_text = str(row.get('skills_list', '')).lower()
+            job_desc = str(row.get('job_description', '')).lower()
+            project_desc = str(row.get('project_description', '')).lower()
+            
+            # ENGLISH PROFICIENCY rất quan trọng cho Logistics (international)
+            english_keywords = ['ielts', 'toeic', 'toefl', 'english']
+            if 'ielts 7' in certs_text or 'ielts 7' in skills_text:
+                industry_bonus += 15  # IELTS 7.0+ là XUẤT SẮC
+            elif 'ielts 6' in certs_text or 'ielts 6' in skills_text:
+                industry_bonus += 10
+            elif any(kw in certs_text or kw in skills_text for kw in ['toeic 850', 'toeic 900', 'toeic 950']):
+                industry_bonus += 12
+            elif any(kw in certs_text or kw in skills_text for kw in english_keywords):
+                industry_bonus += 5
+            
+            # REAL LOGISTICS PROJECTS (Incoterms, Export/Import)
+            real_logistics_keywords = ['incoterms', 'export', 'import', 'shipping', 'freight', 
+                                      'supply chain', 'warehouse', 'inventory', 'customs',
+                                      'cif', 'fob', 'dap', 'cip', 'multimodal']
+            real_project_count = sum(1 for kw in real_logistics_keywords if kw in project_desc)
+            if real_project_count >= 5:
+                industry_bonus += 15  # Có nhiều keywords thực tế
+            elif real_project_count >= 3:
+                industry_bonus += 10
+            elif real_project_count >= 1:
+                industry_bonus += 5
+            
+            # Logistics certificates (APICS, Six Sigma, Simulation)
+            logistics_certs = ['apics', 'cpim', 'cscp', 'six sigma', 'lean', 'green belt', 'black belt',
+                              'fresh connection', 'simulation', 'inchainge']
+            cert_count = sum(1 for cert in logistics_certs if cert in certs_text)
+            industry_bonus += cert_count * 6  # TĂNG từ 5 → 6
+            
+            # Experience CRITICAL for logistics (kể cả part-time)
+            if scores['experience'] >= 20:
+                industry_bonus += 12
+            elif scores['experience'] >= 15:
+                industry_bonus += 8
+            elif scores['experience'] >= 8:  # Part-time 1+ year
+                industry_bonus += 5
+            
+            # ERP/WMS systems
+            systems = ['sap', 'oracle', 'wms', 'tms', 'erp', 'scm software']
+            if any(sys in skills_text for sys in systems):
+                industry_bonus += 8
+            
+            # Process optimization keywords
+            if any(kw in job_desc for kw in ['optimize', 'reduce cost', 'efficiency', 'kpi']):
+                industry_bonus += 6
+        
+        # 13. NGÀNH MỚI - Psychology
+        elif industry == 'Psychology':
+            education_text = str(row.get('education_level', '')).lower()
+            certs_text = str(row.get('certificates', '') or row.get('activity_certificate', '')).lower()
+            
+            # Psychology degree REQUIRED
+            psych_education = ['psychology', 'counseling', 'social work', 'psychiatry', 'behavioral science']
+            has_psych_degree = any(kw in education_text for kw in psych_education)
+            
+            if not has_psych_degree:
+                red_flag_penalty += 40  # MAJOR RED FLAG
+            
+            # License CRITICAL (Licensed Psychologist, LMHC, LCSW)
+            psych_licenses = ['licensed psychologist', 'lpc', 'lmhc', 'lcsw', 'lmft', 'psych license']
+            has_license = any(lic in certs_text for lic in psych_licenses)
+            
+            if has_license:
+                industry_bonus += 15  # BIG bonus for licensed
+            elif seniority in ['Mid', 'Senior'] and not has_license:
+                red_flag_penalty += 20  # Mid+ MUST have license
+            
+            # Education level VERY important
+            if scores['education'] >= 9:  # Master/PhD
+                industry_bonus += 12
+            
+            # Clinical experience
+            if scores['experience'] >= 20:
+                industry_bonus += 10
 
-        # 12. Seniority adjustments (TĂNG CƯỜNG + BỔ SUNG LEAD)
+        # 14. Seniority adjustments (TĂNG CƯỜNG + BỔ SUNG LEAD)
         if seniority == 'Lead':
             # Lead level: Leadership, Strategy, Mentoring CRITICAL
             exp_text = str(row.get('job_description', '')).lower()
@@ -1108,17 +1228,18 @@ class CVScoringRules:
                 if 'github' not in links_text and 'gitlab' not in links_text:
                     red_flag_penalty += 5  # Nhẹ hơn Mid/Senior (-10đ)
 
-        # 13. Confidence bonus
+        # 15. Confidence bonus
         if confidence >= 10:
             industry_bonus += 4  # Tăng từ 3 → 4
         elif confidence >= 5:
             industry_bonus += 2  # Tăng từ 1 → 2
 
-        # 8. Tính tổng điểm (scale về 0-100)
+        # 16. Tính tổng điểm (scale về 0-100) - ĐIỀU CHỈNH CHẶT CHẼ HƠN
         base_total = sum(scores.values())
 
-        # Scale: ~165 điểm tối đa → scale về ~75, sau đó + bonuses - red_flags
-        scaled_score = (base_total / 165) * 75
+        # Scale: ~165 điểm tối đa → scale về ~70 (giảm từ 75), sau đó + bonuses - red_flags
+        # GIẢM BASE SCALE để chấm điểm chặt chẽ hơn
+        scaled_score = (base_total / 165) * 70  # GIẢM từ 75 → 70
 
         total = scaled_score + student_adjustment + industry_bonus + achievement_score - red_flag_penalty
 
@@ -1480,13 +1601,20 @@ def score_new_cv_from_pdf(pdf_path, model, target_job_level='Mid'):
     # Bước 3: Predict base score và lấy breakdown
     print("\n🤖 Bước 2: AI đang phân tích và chấm điểm...")
 
-    # Get detailed scoring breakdown
-    total_score, score_breakdown = CVScoringRules.calculate_total_score(cv_data)
-    base_score = model.predict(cv_data)
+    # Get detailed scoring breakdown (RULE-BASED SCORE)
+    rule_score, score_breakdown = CVScoringRules.calculate_total_score(cv_data)
+    base_score = model.predict(cv_data)  # ML Score
+    
+    print(f"   📏 Điểm Luật (Rule-based): {rule_score:.2f}/100")
+    print(f"   🤖 Điểm AI (ML Model): {base_score:.2f}/100")
 
-    # Bước 4: Adjust score based on job-CV match
-    match_adjustment = calculate_job_match_adjustment(candidate_seniority, target_job_level, base_score)
-    final_score = base_score + match_adjustment
+    # Bước 4: Chọn sử dụng Rule score (không dùng ML)
+    # Rule score chính xác và ổn định hơn, phù hợp thị trường thực tế
+    final_base_score = rule_score  # Dùng rule_score thay vì ML score
+    
+    # Adjust score based on job-CV match
+    match_adjustment = calculate_job_match_adjustment(candidate_seniority, target_job_level, final_base_score)
+    final_score = final_base_score + match_adjustment
 
     # Bước 5: Hiển thị kết quả CHI TIẾT
     print("\n" + "="*70)
@@ -1582,9 +1710,11 @@ def score_new_cv_from_pdf(pdf_path, model, target_job_level='Mid'):
 
     # Score và xếp loại
     print("\n" + "="*70)
-    print(f"   📊 ĐIỂM CƠ BẢN (ML Model): {base_score:.2f}/100")
+    print(f"   📏 ĐIỂM LUẬT (Rule-based): {rule_score:.2f}/100")
+    print(f"   🤖 ĐIỂM AI (ML Model - tham khảo): {base_score:.2f}/100")
+    print(f"   ➡️  ĐIỂM SỬ DỤNG: {final_base_score:.2f}/100 (Rule score)")
     if match_adjustment != 0:
-        print(f"   🎯 ĐIỂM MATCH (Job Level): {match_adjustment:+.2f}")
+        print(f"   🎯 ĐIỀU CHỈNH MATCH: {match_adjustment:+.2f}")
     print(f"   🎯 ĐIỂM CUỐI CÙNG: {final_score:.2f}/100")
 
     percentage = final_score
@@ -1604,7 +1734,9 @@ def score_new_cv_from_pdf(pdf_path, model, target_job_level='Mid'):
 
     return {
         'file_name': os.path.basename(pdf_path),
-        'base_score': base_score,
+        'rule_score': rule_score,  # THÊM: Điểm luật
+        'ml_score': base_score,  # THÊM: Điểm ML
+        'base_score': final_base_score,  # Điểm được sử dụng (= rule_score)
         'match_adjustment': match_adjustment,
         'final_score': final_score,
         'grade': grade,
@@ -1722,7 +1854,7 @@ Examples:
         else:
             print("\n⚠️  Model chưa tồn tại. Đang train...")
         
-        training_files = ['Sheet 1.csv', 'Sheet2.csv']
+        training_files = ['Sheet1.csv', 'Sheet2.csv', 'Sheet3.csv']
         model = CVScoringModel()
         model.train(training_files)
         model.save_model(model_path)
