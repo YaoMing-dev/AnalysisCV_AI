@@ -1,4 +1,7 @@
 # AIreadCV-many-version-
+
+
+ĐÂY LÀ AI CHƯA ĐƯỢC TRAIN BẰNG DATA THẬT ( YOU CAN TRAIN IT BY YOUR SELF THROUGH YOUR DATA ! )
  Trình phân tích CV bằng AI (AI CV Parser)
 Đây là một dự án Python được xây dựng để "đọc" và "hiểu" các file CV PDF đa dạng. "Bộ não" AI này có khả năng chạy trên nhiều layout CV (1-2 cột) và xử lý cả tiếng Anh lẫn tiếng Việt.
 
@@ -96,9 +99,6 @@ Ví dụ (Test CV Tiếng Anh 2):
 
 Bash
 
-python read_cv3.py Rosu_CV.pdf
-📊 Giải thích Kết quả
-Mỗi lần chạy, bạn sẽ nhận được 2 phần kết quả:
 
 =============================================
    KẾT QUẢ ĐỌC CV (Bộ Não V8) - [Tên file CV]
